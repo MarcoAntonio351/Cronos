@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c6c9adeda619d6475d4a0a07e5b16c8",
+    "content-hash": "604a25e11713f71f54a24d292612db2e",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1442,30 +1442,33 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.9.0",
+            "version": "v2.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "c46f16295782e95e179da286f97c513ef8da7612"
+                "reference": "6c460a8ffff013393e3abdf635a4db5d2d776d42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/c46f16295782e95e179da286f97c513ef8da7612",
-                "reference": "c46f16295782e95e179da286f97c513ef8da7612",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/6c460a8ffff013393e3abdf635a4db5d2d776d42",
+                "reference": "6c460a8ffff013393e3abdf635a4db5d2d776d42",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "illuminate/support": "^8.37|^9.0",
+                "illuminate/support": "^9.0",
                 "jenssegers/agent": "^2.6",
                 "laravel/fortify": "^1.12",
-                "php": "^7.3|^8.0"
+                "php": "^8.0.2"
+            },
+            "conflict": {
+                "laravel/framework": "<9.19.0"
             },
             "require-dev": {
                 "inertiajs/inertia-laravel": "^0.5.2",
                 "laravel/sanctum": "^2.7",
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^6.0|^7.0",
+                "orchestra/testbench": "^7.0",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -1504,7 +1507,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2022-06-28T11:52:25+00:00"
+            "time": "2022-07-19T14:03:54+00:00"
         },
         {
             "name": "laravel/sanctum",

@@ -9,7 +9,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.5.2",
         "laravel/framework": "^9.19",
-        "laravel/jetstream": "^2.9",
+        "laravel/jetstream": "^2.10",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "tightenco/ziggy": "^1.0"
