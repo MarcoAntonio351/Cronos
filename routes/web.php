@@ -34,7 +34,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-    Route::get('/admin', function () {
-        return Inertia::render('Admin');
+    Route::get('/usuarios', function () {
+        return Inertia::render('Usuarios');
 
-    })->name('admin');
+    })->name('usuarios');
