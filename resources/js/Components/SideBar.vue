@@ -1,11 +1,12 @@
 <script setup>
+import { Head, Link } from '@inertiajs/inertia-vue3';
 </script>
 
 //sidebar
 <template>
     <div
       id="view"
-      class="flex flex-row fixed left-0" 
+      class="flex flex-row relative left-0" 
       x-data="{ sidenav: true }"
 
     >
@@ -48,7 +49,7 @@
 
           <div id="menu" class="flex flex-col space-y-2">
             <a
-              href=""
+              href="/dashboard"
               class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
             >
               <svg
@@ -64,7 +65,7 @@
               <span class="">Dashboard</span>
             </a>
             <a
-              href=""
+              href="/produtos"
               class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >
               <svg
