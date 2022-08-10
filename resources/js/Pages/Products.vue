@@ -7,9 +7,8 @@ import ProductContent from '@/Components/ProductContent.vue';
   <AppLayout title="Dashboard">
 
   </AppLayout>
-  <div class="w-screen flex">
-    <Sidebar></Sidebar>
-    <ProductContent class="w-full"></ProductContent>
-    
+  <div class="w-100 flex">
+    <Sidebar/>
+    <ProductContent class="w-100"/>
   </div>
 </template>

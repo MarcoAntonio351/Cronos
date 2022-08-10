@@ -6,7 +6,7 @@ import AppLayout from '@/Layouts/AppLayout.vue';
   <AppLayout title="Dashboard">
 
   </AppLayout>
-  <div class="flex justify-center">
+  <div class="flex m-0 p-0">
     <Sidebar></Sidebar>
     
     
