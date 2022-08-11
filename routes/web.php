@@ -41,3 +41,7 @@ Route::middleware([
         return Inertia::render('Usuarios');
 
     })->name('usuarios');
+
+    Route::get('/teste_calendario', function(){
+        return view('testeCalendario');
+    });
