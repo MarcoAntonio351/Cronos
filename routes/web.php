@@ -35,6 +35,13 @@ Route::middleware([
     Route::get('/produtos', function () {
         return Inertia::render('Products');
     })->name('products');
+    Route::get('/leads', function () {
+        return Inertia::render('Leads');
+    })->name('leads');
+    Route::get('/addProdutos', function () {
+        return Inertia::render('AddProdutos');
+    })->name('addProdutos');
+
 });
 
     Route::get('/usuarios', function () {
@@ -44,4 +51,4 @@ Route::middleware([
 
     Route::get('/teste_calendario', function(){
         return view('testeCalendario');
-    
+    });
