@@ -31,7 +31,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
         id="sidebar"
         class="bg-white h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out"
         x-show="sidenav"
-        @click.away="sidenav = false"
+        @click="sidenav = false"
       >
         <div class="space-y-5 md:space-y-3 mt-10">
           <h1 class="font-bold text-4xl text-center md:hidden">
@@ -63,7 +63,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
               <span class="ml-2">Produtos</span>
             </a>
             <a
-              href=""
+              href="/agenda"
               class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >
              

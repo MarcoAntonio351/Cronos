@@ -1,10 +1,23 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import AddProduto from './AddProduto.vue';
+
 </script>
+<script>
+export default {
+  data() {
+    return {
+      showModal: false
+    }
+  }
+}
+</script>
+
 
 <template>
 <!-- component -->
 <div class="sm:px-6 w-full m-0">
+    <t-modal v-model="showModal">hello world</t-modal>
             <div class="px-4 md:px-10 py-4 md:py-7">
                 <div class="flex items-center justify-between">
                     <p tabindex="0" class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Produtos</p>
@@ -19,8 +32,8 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
             </div>
             <div class="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
                 <div class="sm:flex items-center justify-between">
-                    <button onclick="popuphandler(true)" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
-                        <p class="text-sm font-medium leading-none text-white">Add Task</p>
+                    <button @click="showModal=true" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+                        <p class="text-sm font-medium leading-none text-white" >+Produtos</p>
                     </button>
                 </div>
                 <div class="mt-7 overflow-x-auto">

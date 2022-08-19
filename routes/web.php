@@ -38,17 +38,10 @@ Route::middleware([
     Route::get('/leads', function () {
         return Inertia::render('Leads');
     })->name('leads');
-    Route::get('/addProdutos', function () {
-        return Inertia::render('AddProdutos');
-    })->name('addProdutos');
-
+    Route::get('/fornecedor', function () {
+        return Inertia::render('Fornecedor');
+    })->name('fornecedor');
+    Route::get('/agenda', function () {
+        return Inertia::render('Agenda');
+    })->name('agenda');
 });
-
-    Route::get('/usuarios', function () {
-        return Inertia::render('Usuarios');
-
-    })->name('usuarios');
-
-    Route::get('/teste_calendario', function(){
-        return view('testeCalendario');
-    });
