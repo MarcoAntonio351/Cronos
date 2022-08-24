@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import axios from 'axios';
 import Modal from './Modal.vue';
 </script>
 <script>
@@ -15,6 +16,9 @@ import modal from './Modal.vue';
       };
     },
     methods: {
+      getAllOrderedByName(){
+        axios.get()
+      }
       showModal() {
         this.isModalVisible = true;
       },

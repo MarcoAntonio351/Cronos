@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('email')->unique();
-            $table-> description ('description');
+            $table->string('description');
             $table->foreignId('user_id')->index();
         });
     }

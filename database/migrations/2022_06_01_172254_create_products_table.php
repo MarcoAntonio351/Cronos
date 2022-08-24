@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('description');
-            $table->int('value');
+            $table->integer('value');
             $table->foreignId('user_id')->index();
         });
     }
