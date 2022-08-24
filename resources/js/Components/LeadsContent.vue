@@ -1,7 +1,30 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import Modal from './ModalLeads.vue';
+</script>
+<script>
+  export default {
+    name: 'LeadsContent',
+    components: {
+      Modal,
+    },
+    data() {
+      return {
+        isModalVisible: false,
+      };
+    },
+    methods: {
+      showModal() {
+        this.isModalVisible = true;
+      },
+      closeModal() {
+        this.isModalVisible = false;
+      }
+    }
+  };
 </script>
 
+<Modal/>
 <template>
 <!-- component -->
 <div class="sm:px-6 w-full m-0">
@@ -18,9 +41,10 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
                 </div>
             </div>
             <div class="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
-                <div class="sm:flex items-center justify-between">
-                    <button onclick="popuphandler(true)" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
-                        <p class="text-sm font-medium leading-none text-white">+ Leads</p>
+                <div class="sm:flex items-center justify-left">
+                    <Modal v-show="isModalVisible" @close="closeModal"/>
+                    <button @click="showModal" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+                        <p class="text-sm font-medium leading-none text-white" > + Leads</p>
                     </button>
                 </div>
                 <div class="mt-7 overflow-x-auto">

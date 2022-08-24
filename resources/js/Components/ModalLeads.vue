@@ -23,15 +23,15 @@
                         </div>
                         <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Insira as informações</h1>
                         <label for="name" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nome</label>
-                        <input id="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Garrafa" />
-                        <label for="valor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Preço</label>
-                        <input id="valor" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="R$10,00" />
-                           <label for="estoque" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Em estoque</label>
-                        <input id="estoque" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="10" />
-                           <label for="fornecedor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Fornecedor</label>
-                        <input id="fornecedor" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
-                           <label for="url" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">URL do produto</label>
-                        <input id="url" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="https://produto.mercadolivre.com.br/MLB-2618866773-boneca-fofolete-rosa-estrela-_JM#c_id=/home/collections/item&c_campaign=MKPLC_CAT_TB_BRINQUEDOS&c_uid=d4188370-b54d-425a-af99-e941f9b529dd" />
+                        <input id="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+                        <label for="tel" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Telefone</label>
+                        <input id="tel" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="99543221" />
+                           <label for="email" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Email</label>
+                        <input id="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="felipinhozika@gmail.com" />
+                           <label for="org" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Organização</label>
+                        <input id="org" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
+                           <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Gênero</label>
+                        <input id="gen" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="M/F" />
                      <div class="flex items-center justify-start w-full">
 
                             <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">Enviar</button>
