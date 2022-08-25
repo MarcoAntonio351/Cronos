@@ -79,7 +79,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
               <span class="ml-2">Leads</span>
               </a>
             <a
-              href=""
+              href="/fornecedor"
               class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >
 

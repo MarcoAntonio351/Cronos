@@ -1,13 +1,36 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import Modal from './ModalLeads.vue';
+</script>
+<script>
+  export default {
+    name: 'LeadsContent',
+    components: {
+      Modal,
+    },
+    data() {
+      return {
+        isModalVisible: false,
+      };
+    },
+    methods: {
+      showModal() {
+        this.isModalVisible = true;
+      },
+      closeModal() {
+        this.isModalVisible = false;
+      }
+    }
+  };
 </script>
 
+<Modal/>
 <template>
 <!-- component -->
 <div class="sm:px-6 w-full m-0">
             <div class="px-4 md:px-10 py-4 md:py-7">
                 <div class="flex items-center justify-between">
-                    <p tabindex="0" class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Leads</p>
+                    <p tabindex="0" class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Fornecedores</p>
                     <div class="py-3 px-4 flex items-center text-sm font-medium leading-none text-gray-600 bg-gray-200 hover:bg-gray-300 cursor-pointer rounded">
                         <p>Sort By:</p>
                         <select aria-label="select" class="focus:text-indigo-600 focus:outline-none bg-transparent ml-1">
@@ -18,9 +41,10 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
                 </div>
             </div>
             <div class="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
-                <div class="sm:flex items-center justify-between">
-                    <button onclick="popuphandler(true)" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
-                        <p class="text-sm font-medium leading-none text-white">+ Leads</p>
+                <div class="sm:flex items-center justify-left">
+                    <Modal v-show="isModalVisible" @close="closeModal"/>
+                    <button @click="showModal" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+                        <p class="text-sm font-medium leading-none text-white" > + Fornecedor</p>
                     </button>
                 </div>
                 <div class="mt-7 overflow-x-auto">
@@ -54,14 +78,15 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Gênero</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">Endereço</p>
                                     </div>
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Descrição</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">Produto fornecido</p>
                                     </div>
                                 </td>
+                                
                             </tr>
                             <tr class="h-3"></tr>
                             <tr tabindex="0" class="focus:outline-none  h-16 border border-gray-100 rounded">
@@ -85,7 +110,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
                                 </td>
                                 <td class="pl-24">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Sim</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">9987654</p>
                                     </div>
                                 </td>
                                 <td class="pl-5">
@@ -100,12 +125,12 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Indefinido</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">Rapazes house</p>
                                     </div>
                                 </td>
-                                 <td class="pl-5">
+                                <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Sim.</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">camisinha</p>
                                     </div>
                                 </td>
                             </tr>

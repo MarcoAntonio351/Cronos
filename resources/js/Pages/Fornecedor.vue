@@ -1,7 +1,7 @@
 <script setup>
 import Sidebar from '@/Components/SideBar.vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
-import FornecedorVue from '../Components/Fornecedor.vue';
+import FornecedorContent from '../Components/FornecedorContent.vue';
 </script>
 <template>
   <AppLayout title="Dashboard">
@@ -9,6 +9,6 @@ import FornecedorVue from '../Components/Fornecedor.vue';
   </AppLayout>
   <div class="w-100 flex">
     <Sidebar/>
-    <ForcedorVue class="w-100"/>
+    <FornecedorContent class="w-100"/>
   </div>
 </template>

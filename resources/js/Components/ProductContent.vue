@@ -18,7 +18,7 @@ import modal from './Modal.vue';
     methods: {
       getAllOrderedByName(){
         axios.get()
-      }
+      },
       showModal() {
         this.isModalVisible = true;
       },
