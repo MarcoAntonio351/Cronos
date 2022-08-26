@@ -1,10 +1,10 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
-import Modal from './ModalLeads.vue';
+import Modal from './ModalOutfitters.vue';
 </script>
 <script>
   export default {
-    name: 'LeadsContent',
+    name: 'ForncedorContent',
     components: {
       Modal,
     },
@@ -115,7 +115,7 @@ import Modal from './ModalLeads.vue';
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">De graça</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">jf@FERN22</p>
                                     </div>
                                 </td>
                                 <td class="pl-5">
