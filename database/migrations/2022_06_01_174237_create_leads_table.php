@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->string('organization')();
-            $table->description ('description');
+            $table->string('organization');
+            $table->string ('description');
             $table->foreignId('user_id')->index();
 
         });
