@@ -58,4 +58,11 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //chave primaria em outras tabelas
+    public function users(){
+        return $this->hasMany(products::class, 'users');
+        return $this->hasMany(leads::class, 'users');
+        return $this->hasMany(outfitters::class, 'users');
+    }
 }

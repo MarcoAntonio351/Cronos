@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class outfitters extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'email', 'description',' phone', 'productf', 'adress', 'user_id'];
+
+    //chave estrangeira
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

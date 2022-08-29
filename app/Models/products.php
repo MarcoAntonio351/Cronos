@@ -15,8 +15,5 @@ class products extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    //chave primaria em outras tabelas
-    public function users(){
-        return $this->hasMany(Outfitters::class, 'users');
-    }
+
 }
