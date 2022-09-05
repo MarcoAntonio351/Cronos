@@ -26,6 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/getAllproducts', [ProductsController::class, "getAllOrderByName"]);
+Route::post('/produto/cadastrar', [ProductsController::class, "cadastrar"]);
 
 Route::middleware([
     'auth:sanctum',

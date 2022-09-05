@@ -14,18 +14,15 @@ class ProductsController extends Controller
         return $produtos;
     }
 
-    public function insert(Request $request){
+    public function cadastrar(Request $request){
         //cria regras para validar os dados recebidos
-        $regras = array(
+        $validacao = $request->validate([
             'name' => 'required',
             'value' => 'required|numeric|gt:0',
-            'quantify' => 'required|numeric|gt:0',
-            'provider',
-            'url',
-
-
-        );
-        $validacao = Validator::make($request, $regras);
+            // 'quantify' => 'required|numeric|gt:0',
+            // 'provider' => 'required',
+            // 'description' => 'required',
+        ]);
         if($validacao->fails()){
             return response()->json([
                 'status' => 'ERRO',

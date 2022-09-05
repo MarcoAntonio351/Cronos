@@ -1,7 +1,37 @@
 <script>
+import axios from 'axios';
+
   export default {
     name: 'Modal',
+    data: function() {
+        return {
+            'name':'',
+            'value':'',
+            'quantify':'',
+            'provider': '',
+            'description': '',
+        }
+    },
     methods: {
+      
+      cadastrar(){
+        alert(this.name)
+        axios.post('/produto/cadastrar', {
+          params:{
+            'name' : this.name,
+            'value': this.value,
+            'quantify': this.quantify,
+            'provider': this.provider,
+            'description': this.description,
+          } 
+        }).then((data) => {
+          console.log(data)
+          alert("mandei saporra: " + data.data.message)
+        }).catch((erro) => {
+          console.error(erro)
+          alert("caguei saporra: "+ erro.message)
+        })
+      },
       close() {
         this.$emit('close');
       },
@@ -23,18 +53,18 @@
                         </div>
                         <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Insira as informações</h1>
                         <label for="name" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nome</label>
-                        <input id="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Garrafa" />
+                        <input id="name" v-model="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Garrafa" />
                         <label for="valor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Preço</label>
-                        <input id="valor" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="R$10,00" />
-                           <label for="estoque" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Em estoque</label>
+                        <input id="valor" v-model="value" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="R$10,00" />
+                        <label for="estoque" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Estoque</label>
                         <input id="estoque" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="10" />
                            <label for="fornecedor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Fornecedor</label>
                         <input id="fornecedor" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
-                           <label for="url" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">URL do produto</label>
-                        <input id="url" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="https://produto.mercadolivre.com.br/MLB-2618866773-boneca-fofolete-rosa-estrela-_JM#c_id=/home/collections/item&c_campaign=MKPLC_CAT_TB_BRINQUEDOS&c_uid=d4188370-b54d-425a-af99-e941f9b529dd" />
+                        <label for="fornecedor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Descrição</label>
+                        <input id="fornecedor" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Bonito" />
                      <div class="flex items-center justify-start w-full">
 
-                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">Enviar</button>
+                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar()">Enviar</button>
 
                             <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" @click="close">Cancelar</button>
 
