@@ -9,7 +9,7 @@ import Calendar from '../Components/Calendar.vue';
 
   </AppLayout>
   <div class="w-100 flex">
-    <Sidebar/>
+    <Sidebar class="w-100 relative"/>
     <Calendar class="w-100"/>
   </div>
 </template>
