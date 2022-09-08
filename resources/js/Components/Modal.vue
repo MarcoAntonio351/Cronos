@@ -5,9 +5,9 @@ import axios from 'axios';
     name: 'Modal',
     data: function() {
         return {
-            'name':'',
-            'value':'',
-            'quantify':'',
+            'name': '',
+            'value': '',
+            'quantify': '',
             'provider': '',
             'description': '',
         }
@@ -15,21 +15,18 @@ import axios from 'axios';
     methods: {
       
       cadastrar(){
-        alert(this.name)
         axios.post('/produto/cadastrar', {
-          params:{
             'name' : this.name,
             'value': this.value,
             'quantify': this.quantify,
             'provider': this.provider,
             'description': this.description,
-          } 
         }).then((data) => {
           console.log(data)
           alert("mandei saporra: " + data.data.message)
         }).catch((erro) => {
           console.error(erro)
-          alert("caguei saporra: "+ erro.message)
+          alert("caguei saporra: " + erro.titulo + erro.message)
         })
       },
       close() {
@@ -57,11 +54,11 @@ import axios from 'axios';
                         <label for="valor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Preço</label>
                         <input id="valor" v-model="value" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="R$10,00" />
                         <label for="estoque" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Estoque</label>
-                        <input id="estoque" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="10" />
+                        <input id="estoque" v-model="quantify" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="10" />
                            <label for="fornecedor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Fornecedor</label>
-                        <input id="fornecedor" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
-                        <label for="fornecedor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Descrição</label>
-                        <input id="fornecedor" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Bonito" />
+                        <input id="fornecedor" v-model="provider" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
+                        <label for="descrição" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Descrição</label>
+                        <input id="descrição" v-model="description" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Bonito" />
                      <div class="flex items-center justify-start w-full">
 
                             <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar()">Enviar</button>

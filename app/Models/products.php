@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class products extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description', 'value', 'quantify', 'provider', 'description', 'user_id'];
+    protected $fillable = ['name', 'value', 'quantify', 'provider', 'description'];
 
     //chave estrangeira
     public function user(){
