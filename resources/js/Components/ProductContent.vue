@@ -16,8 +16,10 @@ import modal from './Modal.vue';
       };
     },
     methods: {
-      getAllOrderedByName(){
-        axios.get()
+      getAllproducts(){
+        axios.get('/getAllproducts').then((data) => {
+          console.log(data)
+        })
       },
       showModal() {
         this.isModalVisible = true;

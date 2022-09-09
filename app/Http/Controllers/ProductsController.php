@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class ProductsController extends Controller
 {
     public function getAllOrderByName(Request $request){
-        $produtos = Products::orderBy('nome')->get();
+        $produtos = Products::orderBy('name')->get();
         return $produtos;
     }
 
@@ -20,7 +20,7 @@ class ProductsController extends Controller
         $validacao = Validator::make($request->all(), [
             'name' => 'required',
             'value' => 'required',
-            'quantify' => 'required|numeric|gt:0',
+            'quantify' => 'required',
             'provider' => 'required',
             'description' => 'required',
         ]);

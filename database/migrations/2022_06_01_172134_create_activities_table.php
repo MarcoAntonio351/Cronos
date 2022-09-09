@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('name');
             $table->date('data');
             $table->string('description');
-            $table->foreignId('client_id')->index();
         });
     }
 

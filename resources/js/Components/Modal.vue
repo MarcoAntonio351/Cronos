@@ -13,7 +13,6 @@ import axios from 'axios';
         }
     },
     methods: {
-      
       cadastrar(){
         axios.post('/produto/cadastrar', {
             'name' : this.name,
