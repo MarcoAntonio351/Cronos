@@ -21,8 +21,10 @@ import axios from 'axios';
             'provider': this.provider,
             'description': this.description,
         }).then((data) => {
-          console.log(data)
-          alert("mandei saporra: " + data.data.message)
+          // console.log(data)
+          this.ProductContent.getAllproducts();
+          this.$emit('close');
+          // alert("mandei saporra: " + data.data.message)
         }).catch((erro) => {
           console.error(erro)
           alert("caguei saporra: " + erro.titulo + erro.message)

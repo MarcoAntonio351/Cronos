@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use Illuminate\Support\Facades\Validator;
+use Auth;
 
 
 class ProductsController extends Controller
@@ -35,6 +36,7 @@ class ProductsController extends Controller
                 $produto = new Products();
                 //preenche tomaticamente os campos no objeto produto 
                 $produto->fill($request->all());//troquei por all
+                $produto->user_id = Auth::user()->id;
                 //salva no BD
                 $produto->save();
                 return response()->json([

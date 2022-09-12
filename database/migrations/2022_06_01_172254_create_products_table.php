@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('quantify');
             $table->string('provider');
             $table->string('description'); 
-            //$table->foreignId('users_id')->index();
+            $table->foreignId('user_id')->index();
             
         });                      
     }

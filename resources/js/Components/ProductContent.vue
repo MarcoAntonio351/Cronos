@@ -27,6 +27,9 @@ import modal from './Modal.vue';
       closeModal() {
         this.isModalVisible = false;
       }
+    },
+    created(){
+      this.getAllproducts()                 
     }
   };
 </script>
