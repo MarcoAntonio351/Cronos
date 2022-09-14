@@ -70,6 +70,7 @@ const Demo = defineComponent({
     },
   }
 })
+
 export default Demo
 </script>
 

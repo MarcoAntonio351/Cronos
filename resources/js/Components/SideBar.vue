@@ -38,7 +38,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
             <span class="text-teal-600"></span>
           </h1>
           <h1 class="hidden md:block font-bold text-sm md:text-xl text-center">
-            <span class="text-rose-900">Olá</span>
+            <span class="text-blue-900">Olá</span>
             {{ $page.props.user.name }}<span class="text-teal-600"></span>
           </h1>
           <div id="profile" class="space-y-3">
@@ -50,21 +50,21 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
           <div id="menu" class="flex flex-col space-y-2">
             <a
               href="/dashboard"
-              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >
               <img  class="w-8 h-8 fill-current inline-block" src="../../images/inicio.png" alt="">
               <span class="ml-2">Início</span>
             </a>
             <a
               href="/produtos"
-              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 to-indigo-400 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >
              <img  class="w-8 h-8 fill-current inline-block" src="../../images/produto.png" alt="">
               <span class="ml-2">Produtos</span>
             </a>
             <a
               href="/agenda"
-              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >
              
              <img  class="w-7 h-7 fill-current inline-block" src="../../images/calendar.png" alt="">
@@ -72,7 +72,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
               </a>
             <a
               href="/leads"
-              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >
 
               <img  class="w-8 h-8 fill-current inline-block" src="../../images/add-user.png" alt="">
@@ -80,7 +80,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
               </a>
             <a
               href="/fornecedor"
-              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >
 
               <img  class="w-8 h-8 fill-current inline-block" src="../../images/fornecedor.png
