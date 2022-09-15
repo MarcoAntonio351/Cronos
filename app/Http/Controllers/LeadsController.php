@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Leads as ControllersLeads;
 use Illuminate\Http\Request;
-use App\Models\Products;
+
+use App\Models\leads;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
 
-class ProductsController extends Controller
+
+class LeadsController extends Controller
 {
     public function getAllOrderByName(Request $request){
-        $produtos = Products::orderBy('name')->get();
-        return $produtos;
+        $leads = Leads::orderBy('name')->get();
+        return $leads;
     }
 
     public function cadastrar(Request $request){
@@ -20,10 +23,11 @@ class ProductsController extends Controller
 
         $validacao = Validator::make($request->all(), [
             'name' => 'required',
-            'value' => 'required',
-            'quantify' => 'required',
-            'provider' => 'required',
-            'description',
+            'phone' => 'required',
+            'email' => 'required',
+            'organization',
+            'gender',
+            'organization',
         ]);
         if($validacao->fails()){
             return response()->json([
@@ -33,12 +37,12 @@ class ProductsController extends Controller
             ], 400);
         }else{
             try {
-                $produto = new Products();
+                $leads = new Leads();
                 //preenche tomaticamente os campos no objeto produto 
-                $produto->fill($request->all());//troquei por all
-                $produto->user_id = Auth::user()->id;
+                $leads->fill($request->all());//troquei por all
+                $leads->user_id = Auth::user()->id;
                 //salva no BD
-                $produto->save();
+                $leads->save();
                 return response()->json([
                     'status' => 'SUCESSO',
                     'titulo' => 'Cadastro de produto',

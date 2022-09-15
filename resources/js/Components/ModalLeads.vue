@@ -1,13 +1,46 @@
+<script setup>
+  import { Head, Link } from '@inertiajs/inertia-vue3';
+  // import axios from 'axios';
+  import Modal from './Modal.vue';
+  </script>
 <script>
-  export default {
-    name: 'Modal',
-    methods: {
-      close() {
-        this.$emit('close');
+  import axios from 'axios';
+  
+    export default {
+      name: 'Modal',
+      data: function() {
+          return {
+              'name': '',
+              'value': '',
+              'quantify': '',
+              'provider': '',
+              'description': '',
+          }
       },
-    },
-  };
-</script>
+      methods: {
+        cadastrar(){
+          axios.post('/produto/cadastrar', {
+              'name' : this.name,
+              'value': this.value,
+              'quantify': this.quantify,
+              'provider': this.provider,
+              'description': this.description,
+          }).then((data) => {
+            // console.log(data)
+            this.ProductContent.getAllproducts();
+            this.$emit('close');
+            // alert("mandei saporra: " + data.data.message)
+          }).catch((erro) => {
+            console.error(erro)
+            alert("caguei saporra: " + erro.titulo + erro.message)
+          })
+        },
+        close() {
+          this.$emit('close');
+        },
+      },
+    };
+  </script>
 <template>
   <div class="modal-backdrop">
     <div class="modal">

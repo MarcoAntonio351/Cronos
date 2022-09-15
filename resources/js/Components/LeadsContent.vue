@@ -1,28 +1,39 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import LeadsVue from '../Pages/Leads.vue';
 import Modal from './ModalLeads.vue';
 </script>
 <script>
-  export default {
-    name: 'LeadsContent',
-    components: {
-      Modal,
-    },
-    data() {
-      return {
-        isModalVisible: false,
+    import modal from './Modal.vue';
+      export default {
+        name: 'Leads',
+        components: {
+          Modal,
+        },
+        data() {
+          return {
+            isModalVisible: false,
+            leads : [],
+          };
+        },
+        methods: {
+          getAllLeads(){
+            axios.get('/getAllLeads').then((data) => {
+              this.leads = data.data
+            })
+          },
+          showModal() {
+            this.isModalVisible = true;
+          },
+          closeModal() {
+            this.isModalVisible = false;
+          }
+        },
+        created(){
+          this.getAllLeads()                 
+        },
       };
-    },
-    methods: {
-      showModal() {
-        this.isModalVisible = true;
-      },
-      closeModal() {
-        this.isModalVisible = false;
-      }
-    }
-  };
-</script>
+    </script>
 
 <Modal/>
 <template>
@@ -51,11 +62,6 @@ import Modal from './ModalLeads.vue';
                     <table class="w-full whitespace-nowrap">
                         <tbody>
                             <tr tabindex="0" class="focus:outline-none h-16 rounded">
-                                <td>
-                                    <div class="ml-5">
-                                       
-                                    </div>
-                                </td>
                                 <td class="">
                                     <div class="flex items-center pl-5">
                                         <p class="text-base font-medium leading-none text-gray-700 mr-2">Nome</p>
@@ -88,23 +94,10 @@ import Modal from './ModalLeads.vue';
                                 </td>
                             </tr>
                             <tr class="h-3"></tr>
-                            <tr tabindex="0" class="focus:outline-none  h-16 border border-gray-100 rounded">
-                                <td>
-                                    <div class="ml-5">
-                                        <div class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
-                                            <input placeholder="checkbox" type="checkbox" class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full" />
-                                            <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
-                                                <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
-                                                    <path d="M5 12l5 5l10 -10"></path>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
+                            <tr tabindex="0" class="focus:outline-none  h-16 border border-gray-100 rounded" v-for="leads in leads" :key="leads.id">
                                 <td  class="focus:text-indigo-600 ">
                                     <div class="flex items-center pl-5">
-                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">João Fernando</p>
+                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">{{leads.name}}</p>
                                     </div>
                                 </td>
                                 <td class="pl-24">

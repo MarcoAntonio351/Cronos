@@ -57,7 +57,7 @@ import modal from './Modal.vue';
                         <p class="text-sm font-medium leading-none text-white" > + Produtos</p>
                     </button>
                 </div>
-                <div class="mt-7 overflow-x-auto">
+                <div class="mt-7 overflow-y-auto h-[48rem]">
                     <table class="w-full whitespace-nowrap">
                         <tbody>
                             <tr tabindex="0" class="focus:outline-none h-16 rounded bg-gradient-to-r from-blue-700 via-blue-800 to-blue-800">
