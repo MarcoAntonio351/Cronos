@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\LeadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,12 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-Route::get('/getAllLeads', [ProductsController::class, "getAllOrderByName"]);
+Route::get('/getAllLeads', [LeadsController::class, "getAllLeadsByName"]);
 Route::get('/getAllproducts', [ProductsController::class, "getAllOrderByName"]);
 Route::post('/produto/cadastrar', [ProductsController::class, "cadastrar"]);
+Route::post('/leads/cadastrar', [LeadsController::class, "cadastrarleads"]);
+Route::get('/getAllOutfitters', [OutfittersController::class, "getAllOutfittersByName"]);
+Route::post('/outfitters/cadastrar', [OutfittersController::class, "cadastraroutfitter"]);
 
 Route::middleware([
     'auth:sanctum',

@@ -7,27 +7,27 @@
   import axios from 'axios';
   
     export default {
-      name: 'Modal',
+      name: 'ModalLeads',
       data: function() {
           return {
               'name': '',
-              'value': '',
-              'quantify': '',
-              'provider': '',
-              'description': '',
+              'phone': '',
+              'email': '',
+              'organization': '',
+              'gender': '',
           }
       },
       methods: {
         cadastrar(){
-          axios.post('/produto/cadastrar', {
+          axios.post('/leads/cadastrar', {
               'name' : this.name,
-              'value': this.value,
-              'quantify': this.quantify,
-              'provider': this.provider,
-              'description': this.description,
+              'phone': this.phone,
+              'email': this.email,
+              'organization': this.organization,
+              'gender': this.gender,
           }).then((data) => {
             // console.log(data)
-            this.ProductContent.getAllproducts();
+            this.LeadsContent.getAllLeads();
             this.$emit('close');
             // alert("mandei saporra: " + data.data.message)
           }).catch((erro) => {
@@ -56,18 +56,18 @@
                         </div>
                         <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Insira as informações</h1>
                         <label for="name" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nome</label>
-                        <input id="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+                        <input id="name" v-model="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
                         <label for="tel" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Telefone</label>
-                        <input id="tel" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="99543221" />
+                        <input id="tel" v-model="phone" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="99543221" />
                            <label for="email" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Email</label>
-                        <input id="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="felipinhozika@gmail.com" />
+                        <input id="email" v-model="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="felipinhozika@gmail.com" />
                            <label for="org" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Organização</label>
-                        <input id="org" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
+                        <input id="org" v-model="organization" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
                            <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Gênero</label>
-                        <input id="gen" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="M/F" />
+                        <input id="gen" v-model="gender" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="M/F" />
                      <div class="flex items-center justify-start w-full">
 
-                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">Enviar</button>
+                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar">Enviar</button>
 
                             <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" @click="close">Cancelar</button>
 

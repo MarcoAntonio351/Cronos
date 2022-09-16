@@ -2,31 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Leads as ControllersLeads;
+use App\Http\Controllers\Leads as ControllersOutfitters;
 use Illuminate\Http\Request;
 
-use App\Models\leads;
+use App\Models\Outfitters;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
 
 
-class LeadsController extends Controller
+class OutfittersController extends Controller
 {
-    public function getAllLeadsByName(Request $request){
-        $leads = Leads::orderBy('name')->get();
-        return $leads;
+    public function getAllOutfittersByName(Request $request){
+        $outfitter = Outfitters::orderBy('name')->get();
+        return $outfitter;
     }
 
-    public function cadastrarleads(Request $request){
+    public function cadastraroutfitter(Request $request){
         //cria regras para validar os dados recebidos
 
         $validacao = Validator::make($request->all(), [
             'name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'organization',
-            'gender',
+            'email',
+            'phone',
+            'productf' => 'required',
+            'adress',
         ]);
         if($validacao->fails()){
             return response()->json([
@@ -36,21 +36,21 @@ class LeadsController extends Controller
             ], 400);
         }else{
             try {
-                $leads = new Leads();
+                $outfitter = new Outfitters();
                 //preenche tomaticamente os campos no objeto produto 
-                $leads->fill($request->all());//troquei por all
-                $leads->user_id = Auth::user()->id;
+                $outfitter->fill($request->all());//troquei por all
+                $outfitter->user_id = Auth::user()->id;
                 //salva no BD
-                $leads->save();
+                $outfitter->save();
                 return response()->json([
                     'status' => 'SUCESSO',
-                    'titulo' => 'Cadastro de lead',
-                    'message' => 'Lead cadastrado com sucesso!',
+                    'titulo' => 'Cadastro de fornecedor',
+                    'message' => 'Fornecedor cadastrado com sucesso!',
                 ], 200);
             } catch (\Throwable $th) {
                 return response()->json([
                     'status' => 'ERRO',
-                    'titulo' => 'Erro ao cadastrar lead',
+                    'titulo' => 'Erro ao cadastrar fornecedor',
                     'message' => $th->getMessage(),
                 ], 400);
             }

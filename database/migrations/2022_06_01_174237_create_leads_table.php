@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('phone');
             $table->string('organization');
             $table->string ('gender');
-            $table->string ('description');
             $table->foreignId('user_id')->index();
 
         });

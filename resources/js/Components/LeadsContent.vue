@@ -87,11 +87,6 @@ import Modal from './ModalLeads.vue';
                                         <p class="text-sm leading-none text-gray-600 ml-2">Gênero</p>
                                     </div>
                                 </td>
-                                <td class="pl-5">
-                                    <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Descrição</p>
-                                    </div>
-                                </td>
                             </tr>
                             <tr class="h-3"></tr>
                             <tr tabindex="0" class="focus:outline-none  h-16 border border-gray-100 rounded" v-for="leads in leads" :key="leads.id">
@@ -102,27 +97,22 @@ import Modal from './ModalLeads.vue';
                                 </td>
                                 <td class="pl-24">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Sim</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">{{leads.phone}}</p>
                                     </div>
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">De graça</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">{{leads.email}}</p>
                                     </div>
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Rapazes</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">{{leads.organization}}</p>
                                     </div>
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Indefinido</p>
-                                    </div>
-                                </td>
-                                 <td class="pl-5">
-                                    <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Sim.</p>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">{{leads.gender}}</p>
                                     </div>
                                 </td>
                             </tr>
