@@ -54,37 +54,37 @@ import Modal from './ModalLeads.vue';
             <div class="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
                 <div class="sm:flex items-center justify-left">
                     <Modal v-show="isModalVisible" @close="closeModal"/>
-                    <button @click="showModal" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+                    <button @click="showModal" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-blue-800 hover:bg-blue-900  focus:outline-none rounded">
                         <p class="text-sm font-medium leading-none text-white" > + Leads</p>
                     </button>
                 </div>
                 <div class="mt-7 overflow-x-auto">
                     <table class="w-full whitespace-nowrap">
                         <tbody>
-                            <tr tabindex="0" class="focus:outline-none h-16 rounded">
+                            <tr tabindex="0" class="focus:outline-none h-16 rounded bg-gradient-to-r from-blue-700 via-blue-800 to-blue-800">
                                 <td class="">
                                     <div class="flex items-center pl-5">
-                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">Nome</p>
+                                        <p class="text-base font-medium leading-none text-white-700 mr-2">Nome</p>
                                     </div>
                                 </td>
                                 <td class="pl-24">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Telefone</p>
+                                        <p class="text-sm leading-none text-white-600 ml-2">Telefone</p>
                                     </div>
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Email</p>
+                                        <p class="text-sm leading-none text-white-600 ml-2">Email</p>
                                     </div>
                                 </td>
                                  <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Organização</p>
+                                        <p class="text-sm leading-none text-white ml-2">Organização</p>
                                     </div>
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <p class="text-sm leading-none text-gray-600 ml-2">Gênero</p>
+                                        <p class="text-sm leading-none text-white ml-2">Gênero</p>
                                     </div>
                                 </td>
                             </tr>
