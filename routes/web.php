@@ -31,6 +31,7 @@ Route::post('/produto/cadastrar', [ProductsController::class, "cadastrar"]);
 Route::post('/leads/cadastrar', [LeadsController::class, "cadastrarleads"]);
 Route::get('/getAllOutfitters', [OutfittersController::class, "getAllOutfittersByName"]);
 Route::post('/outfitters/cadastrar', [OutfittersController::class, "cadastraroutfitter"]);
+Route::delete('/deleteProduct', [ProductsController::class, "delete"]);
 
 Route::middleware([
     'auth:sanctum',

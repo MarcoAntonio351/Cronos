@@ -27,6 +27,16 @@ import modal from './Modal.vue';
       },
       closeModal() {
         this.isModalVisible = false;
+      },
+      deleta(id){
+        axios.delete('/deleteProduct', 
+        { params: { id: id } }
+        ).then((data) => {
+            console.log(data)
+        }).catch((error)=>{
+            console.log(error)
+        })
+        this.getAllproducts()
       }
     },
     created(){
@@ -57,7 +67,7 @@ import modal from './Modal.vue';
                         <p class="text-sm font-medium leading-none text-white" > + Produtos</p>
                     </button>
                 </div>
-                <div class="mt-7 overflow-y-auto h-[48rem]">
+                <div class="mt-7 overflow-y-auto h-[36rem]">
                     <table class="w-full whitespace-nowrap">
                         <tbody>
                             <tr tabindex="0" class="focus:outline-none h-16 rounded bg-gradient-to-r from-blue-700 via-blue-800 to-blue-800">
@@ -122,7 +132,7 @@ import modal from './Modal.vue';
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9" alt="trash" />
+                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="deleta(produto.id)"/>
                                     </div>
                                 </td>
                             </tr>

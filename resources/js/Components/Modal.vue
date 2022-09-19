@@ -22,9 +22,9 @@ import axios from 'axios';
             'description': this.description,
         }).then((data) => {
           // console.log(data)
-          axios.get('/getAllproducts').then((data) => {
-          this.produtos = data.data
-        })
+            axios.get('/getAllproducts').then((data) => {
+            this.produtos = data.data
+          })
           this.$emit('close');
           // alert("mandei saporra: " + data.data.message)
         }).catch((erro) => {
