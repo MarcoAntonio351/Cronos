@@ -4,18 +4,23 @@ import axios from 'axios';
 import Modal from './Modal.vue';
 </script>
 <script>
+import ModalExcluirVue from './ModalExcluir.vue';
 import modal from './Modal.vue';
+
   export default {
     name: 'ProductContent',
     components: {
       Modal,
+      ModalExcluirVue
     },
     data() {
       return {
         isModalVisible: false,
+        isModalExcluirVisible: false,
         produtos : [],
       };
     },
+
     methods: {
       getAllproducts(){
         axios.get('/getAllproducts').then((data) => {
@@ -27,6 +32,12 @@ import modal from './Modal.vue';
       },
       closeModal() {
         this.isModalVisible = false;
+      },
+      showModalExcluir() {
+        this.isModalExcluirVisible = true;
+      },
+      closeModalExcluir() {
+        this.isModalExcluirVisible = false;
       },
       deleta(id){
         axios.delete('/deleteProduct', 
@@ -132,7 +143,8 @@ import modal from './Modal.vue';
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="deleta(produto.id)"/>
+                                        <ModalExcluirVue v-show="isModalExcluirVisible" @close="closeModalExcluir"/>
+                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="showModalExcluir"/>
                                     </div>
                                 </td>
                             </tr>
