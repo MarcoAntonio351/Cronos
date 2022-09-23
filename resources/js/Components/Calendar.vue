@@ -46,6 +46,15 @@ const Demo = defineComponent({
     handleWeekendsToggle() {
       this.calendarOptions.weekends = !this.calendarOptions.weekends // update a property
     },
+    allEvents() {
+      let newArray = this.currentEvents.map((event)=>{
+        return ({
+          title: event.title,
+          date: event.startStr,
+        })
+      })
+      console.log(newArray)
+    },
     handleDateSelect(selectInfo: DateSelectArg) {
       let title = prompt('Please enter a new title for your event')
       let calendarApi = selectInfo.view.calendar
@@ -59,6 +68,13 @@ const Demo = defineComponent({
           allDay: selectInfo.allDay
         })
       }
+      let newArray = this.currentEvents.map((event)=>{
+        return ({
+          title: event.title,
+          date: event.startStr,
+        })
+      })
+      console.log(newArray)
     },
     handleEventClick(clickInfo: EventClickArg) {
       if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
@@ -77,24 +93,6 @@ export default Demo
 <template>
   <div class='demo-app'>
     <!-- <div class='demo-app-sidebar'> -->
-      <!-- <div class='demo-app-sidebar-section'>
-        <h2>Instructions</h2>
-        <ul>
-          <li>Select dates and you will be prompted to create a new event</li>
-          <li>Drag, drop, and resize events</li>
-          <li>Click an event to delete it</li>
-        </ul>
-      </div>
-      <div class='demo-app-sidebar-section'>
-        <label>
-          <input
-            type='checkbox'
-            :checked='calendarOptions.weekends'
-            @change='handleWeekendsToggle'
-          />
-          toggle weekends
-        </label>
-      </div>
       <div class='demo-app-sidebar-section'>
         <h2>All Events ({{ currentEvents.length }})</h2>
         <ul>
@@ -115,6 +113,7 @@ export default Demo
         </template>
       </FullCalendar>
     </div>
+  </div>
 </template>
 
 <style lang='css'>
