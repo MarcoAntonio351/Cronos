@@ -68,12 +68,14 @@ const Demo = defineComponent({
           allDay: selectInfo.allDay
         })
       }
+
       let newArray = this.currentEvents.map((event)=>{
         return ({
           title: event.title,
           date: event.startStr,
         })
       })
+      
       console.log(newArray)
     },
     handleEventClick(clickInfo: EventClickArg) {

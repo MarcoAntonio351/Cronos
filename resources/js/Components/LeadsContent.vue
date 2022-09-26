@@ -1,16 +1,16 @@
 <script setup>
     import { Head, Link } from '@inertiajs/inertia-vue3';
     import axios from 'axios';
-    import Modal from './Modal.vue';
+
     </script>
     <script>
     import ModalExcluirLeads from './ModalExcluirLeads.vue';
-    import modal from './Modal.vue';
+    import ModalLeads from './ModalLeads.vue';
     
       export default {
         name: 'LeadsContent',
         components: {
-          Modal,
+          ModalLeads,
           ModalExcluirLeads
         },
         data() {
@@ -27,10 +27,10 @@
               this.leads = data.data
             })
           },
-          showModal() {
+          showModalLeads() {
             this.isModalVisible = true;
           },
-          closeModal() {
+          closeModalLeads() {
             this.isModalVisible = false;
           },
           showisModalExcluirLeads() {
@@ -40,7 +40,7 @@
             this.isModalExcluirLeadsVisible = false;
           },
           deleta(id){
-            axios.delete('/deleteProduct', 
+            axios.delete('/deleteLeads', 
             { params: { id: id } }
             ).then((data) => {
                 console.log(data)
@@ -76,8 +76,8 @@
                     </div>
                     <div class="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
                         <div class="sm:flex items-center justify-left">
-                            <Modal v-show="isModalVisible" @close="closeModal"/>
-                            <button @click="showModal" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-blue-800 hover:bg-blue-900  focus:outline-none rounded">
+                            <ModalLeads v-show="isModalVisible" @close="closeModal"/>
+                            <button @click="showModalLeads" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-blue-800 hover:bg-blue-900  focus:outline-none rounded">
                                 <p class="text-sm font-medium leading-none text-white" > + Leads</p>
                             </button>
                         </div>
