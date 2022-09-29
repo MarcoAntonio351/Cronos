@@ -23,8 +23,8 @@ import modal from './Modal.vue';
     },
 
     methods: {
-      getAllproducts(){
-        axios.get('/getAllproducts').then((data) => {
+        getAllOrderByName(){
+        axios.get('/getAllOrderByName').then((data) => {
           this.produtos = data.data
         })
       },
@@ -50,11 +50,11 @@ import modal from './Modal.vue';
         // }).catch((error)=>{
         //     console.log(error)
         // })
-        this.getAllproducts()
+        this.getAllOrderByName()
       }
     },
     created(){
-      this.getAllproducts()                 
+      this.getAllOrderByName()                 
     },
   };
 </script>

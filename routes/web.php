@@ -26,12 +26,14 @@ Route::get('/', function () {
     ]);
 });
 Route::get('/getAllLeads', [LeadsController::class, "getAllLeadsByName"]);
-Route::get('/getAllproducts', [ProductsController::class, "getAllOrderByName"]);
+Route::get('/getAllOrderByName', [ProductsController::class, "getAllOrderByName"]);
 Route::post('/produto/cadastrar', [ProductsController::class, "cadastrar"]);
 Route::post('/leads/cadastrar', [LeadsController::class, "cadastrarleads"]);
 Route::get('/getAllOutfitters', [OutfittersController::class, "getAllOutfittersByName"]);
 Route::post('/outfitters/cadastrar', [OutfittersController::class, "cadastraroutfitter"]);
+Route::post('/calendar/cadastrar', [CalendarController::class, "cadastrarevents"]);
 Route::delete('/deleteProduct', [ProductsController::class, "delete"]);
+
 
 Route::middleware([
     'auth:sanctum',
@@ -53,4 +55,5 @@ Route::middleware([
     Route::get('/agenda', function () {
         return Inertia::render('Agenda');
     })->name('agenda');
+    Route::match(['get', 'post'], '/botman', [BotManController::class,"handle"]);
 });

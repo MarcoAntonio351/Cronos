@@ -6,6 +6,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from '../../../event-utils'
+import axios from 'axios'
 const Demo = defineComponent({
   components: {
     FullCalendar,
@@ -43,6 +44,21 @@ const Demo = defineComponent({
     }
   },
   methods: {
+    // cadastrar(){
+    //   axios.post('/calendar/cadastrar', {
+    //       'date' : this.startStr,
+    //       'title': this.title,
+    //   }).then((data) => {
+    //     // console.log(data)
+    //     this.event.getAllEvents();
+    //     this.$emit('close');
+    //     // alert("mandei saporra: " + data.data.message)
+    //   }).catch((erro) => {
+    //     console.error(erro)
+    //     alert("erro: " + erro.titulo + erro.message)
+    //   })
+    // },
+      
     handleWeekendsToggle() {
       this.calendarOptions.weekends = !this.calendarOptions.weekends // update a property
     },
@@ -68,6 +84,19 @@ const Demo = defineComponent({
           allDay: selectInfo.allDay
         })
       }
+
+      axios.post('/calendar/cadastrar', {
+          'date' : selectInfo.startStr,
+          'title': title,
+      }).then((data) => {
+        // console.log(data)
+        this.event.getAllEvents();
+        this.$emit('close');
+        // alert("mandei saporra: " + data.data.message)
+      }).catch((erro) => {
+        console.error(erro)
+        alert("erro: " + erro.titulo + erro.message)
+      })
 
       let newArray = this.currentEvents.map((event)=>{
         return ({

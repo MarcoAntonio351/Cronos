@@ -1,6 +1,7 @@
 <script setup>
 import Sidebar from '@/Components/SideBar.vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
+import Chat from '../Components/Chat.vue';
 </script>
 <template>
   <AppLayout title="Dashboard">
@@ -8,5 +9,7 @@ import AppLayout from '@/Layouts/AppLayout.vue';
   </AppLayout>
   <div class="flex m-0 p-0">
     <Sidebar></Sidebar>
+  
+
   </div>
 </template>

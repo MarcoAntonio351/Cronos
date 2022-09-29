@@ -14,11 +14,11 @@
           };
         },
         methods: {
-          showModal() {
-            this.isModalVisible = true;
+          showModalOutfitters() {
+            this.isModalOutfittersVisible = true;
           },
-          closeModal() {
-            this.isModalVisible = false;
+          closeModalOutfitters() {
+            this.isModalOutfittersVisible = false;
           }
         }
       };
