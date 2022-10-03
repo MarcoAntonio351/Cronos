@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LeadsController extends Controller
 {
+    public function getLeadsNumber(Request $request){
+        $leads = Leads::count();
+        return $leads;
+    }
     public function getAllLeadsByName(Request $request){
         $leads = Leads::orderBy('name')->get();
         return $leads;

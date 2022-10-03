@@ -91,7 +91,6 @@ const Demo = defineComponent({
       }).then((data) => {
         // console.log(data)
         this.event.getAllEvents();
-        this.$emit('close');
         // alert("mandei saporra: " + data.data.message)
       }).catch((erro) => {
         console.error(erro)

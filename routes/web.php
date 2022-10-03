@@ -25,6 +25,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get('/getLeadsNumber', [LeadsController::class, "getLeadsNumber"]);
 Route::get('/getAllLeads', [LeadsController::class, "getAllLeadsByName"]);
 Route::get('/getAllOrderByName', [ProductsController::class, "getAllOrderByName"]);
 Route::post('/produto/cadastrar', [ProductsController::class, "cadastrar"]);
