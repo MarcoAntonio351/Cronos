@@ -11,20 +11,20 @@
       data: function() {
           return {
               'name': '',
-              'phone': '',
               'email': '',
-              'organization': '',
-              'gender': '',
+              'phone': '',
+              'productf': '',
+              'adress': '',
           }
       },
       methods: {
         cadastrar(){
           axios.post('/outfitters/cadastrar', {
               'name' : this.name,
-              'phone': this.phone,
-              'email': this.email,
-              'organization': this.organization,
-              'gender': this.gender,
+              'email': this.phone,
+              'phone': this.email,
+              'productf': this.organization,
+              'adress': this.gender,
           }).then((data) => {
             // console.log(data)
             this. FornecedorContent.getAllOutfitters();

@@ -90,7 +90,7 @@ const Demo = defineComponent({
           'title': title,
       }).then((data) => {
         // console.log(data)
-        this.event.getAllEvents();
+        this.event.cadastrarevents();
         // alert("mandei saporra: " + data.data.message)
       }).catch((erro) => {
         console.error(erro)

@@ -1,16 +1,16 @@
 <script setup>
     import { Head, Link } from '@inertiajs/inertia-vue3';
-    import Modal from './ModalOutfitters.vue';
+    import ModalOutfitters from './ModalOutfitters.vue';
     </script>
     <script>
       export default {
         name: 'ForncedorContent',
         components: {
-          Modal,
+          ModalOutfitters,
         },
         data() {
           return {
-            isModalVisible: false,
+            isModalOutfittersVisible: false,
           };
         },
         methods: {
@@ -24,7 +24,7 @@
       };
     </script>
     
-    <Modal/>
+    <ModalOutfitters/>
     <template>
     <!-- component -->
     <div class="sm:px-6 w-full m-0">
@@ -42,8 +42,8 @@
                 </div>
                 <div class="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
                     <div class="sm:flex items-center justify-left">
-                        <Modal v-show="isModalVisible" @close="closeModal"/>
-                        <button @click="showModal" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-blue-800 hover:bg-blue-900 focus:outline-none rounded">
+                        <ModalOutfitters v-show="isModalOutfittersVisible" @close="closeModalOutfitters"/>
+                        <button @click="showModalOutfitters" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-blue-800 hover:bg-blue-900 focus:outline-none rounded">
                             <p class="text-sm font-medium leading-none text-white" > + Fornecedor</p>
                         </button>
                     </div>

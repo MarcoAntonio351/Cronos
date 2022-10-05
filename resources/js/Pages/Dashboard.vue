@@ -11,6 +11,8 @@ import AllLeads from '../Components/AllLeads.vue';
   <div class="flex m-0 p-0">
     <Sidebar></Sidebar>
     <AllLeads></AllLeads>
+    <h1>se mata</h1>
+  
 
   </div>
 </template>

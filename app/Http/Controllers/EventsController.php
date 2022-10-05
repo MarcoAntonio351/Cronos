@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\activities;
+use App\Models\Events;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth; 
 
 
-class CalendarController extends Controller
+class EventsController extends Controller
 {
     
-    public function cadastrar(Request $request){
+    public function cadastrarevents(Request $request){
         //cria regras para validar os dados recebidos
 
         $validacao = Validator::make($request->all(), [
-            'title' => 'required',
+            'tittle' => 'required',
             'date' => 'required',
         ]);
         if($validacao->fails()){
