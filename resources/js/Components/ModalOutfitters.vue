@@ -1,7 +1,6 @@
 <script setup>
   import { Head, Link } from '@inertiajs/inertia-vue3';
   // import axios from 'axios';
-  import Modal from './Modal.vue';
   </script>
 <script>
   import axios from 'axios';
@@ -21,13 +20,13 @@
         cadastrar(){
           axios.post('/outfitters/cadastrar', {
               'name' : this.name,
-              'email': this.phone,
-              'phone': this.email,
-              'productf': this.organization,
-              'adress': this.gender,
+              'email': this.email,
+              'phone': this.phone,
+              'productf': this.productf,
+              'adress': this.adress,
           }).then((data) => {
             // console.log(data)
-            this. FornecedorContent.getAllOutfitters();
+            this.FornecedorContent.getAllOutfitters();
             this.$emit('close');
             // alert("mandei saporra: " + data.data.message)
           }).catch((erro) => {
@@ -69,7 +68,7 @@
                         <input id="org" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="coito gratis" />
                      <div class="flex items-center justify-start w-full">
 
-                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">Enviar</button>
+                      <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar">Enviar</button>
 
                             <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" @click="close">Cancelar</button>
 

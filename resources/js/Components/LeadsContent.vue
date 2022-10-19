@@ -4,19 +4,16 @@
 
     </script>
     <script>
-    import ModalExcluirLeads from './ModalExcluirLeads.vue';
     import ModalLeads from './ModalLeads.vue';
     
       export default {
         name: 'LeadsContent',
         components: {
           ModalLeads,
-          ModalExcluirLeads
         },
         data() {
           return {
             isModalVisible: false,
-            isModalExcluirLeadsVisible: false,
             leads : [],
           };
         },
@@ -33,13 +30,7 @@
           closeModalLeads() {
             this.isModalVisible = false;
           },
-          showisModalExcluirLeads() {
-            this.isModalExcluirLeadsVisible = true;
-          },
-          closeisModalExcluirLeads() {
-            this.isModalExcluirLeadsVisible = false;
-          },
-          deleta(id){
+          delete(id){
             axios.delete('/deleteLeads', 
             { params: { id: id } }
             ).then((data) => {
@@ -145,9 +136,9 @@
                                         </td>
                                     <td class="pl-5">
                                         <div class="flex items-center">
-                                            <ModalExcluirLeads v-show="isModalExcluirLeadsVisible" @close="closeisModalExcluirLeads"/>
-                                            <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="showisModalExcluirLeads"/>
-                                        </div>
+                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="delete(leads.id)"/>
+
+                                    </div>
                                     </td>
                                 </tr>
                                 <tr class="h-3"></tr>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class leads extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'phone','email', 'organization', 'gender', 'description'];
+    protected $fillable = ['name', 'phone','email', 'organization', 'gender',];
 
     //chave estrangeira
     public function user(){

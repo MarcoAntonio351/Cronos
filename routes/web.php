@@ -34,6 +34,7 @@ Route::get('/getAllOutfitters', [OutfittersController::class, "getAllOutfittersB
 Route::post('/outfitters/cadastrar', [OutfittersController::class, "cadastraroutfitter"]);
 Route::post('/calendar/cadastrar', [EventsController::class, "cadastrarevents"]);
 Route::delete('/deleteProduct', [ProductsController::class, "delete"]);
+Route::delete('/deleteLeads', [LeadsController::class, "deleteLeads"]);
 
 
 Route::middleware([

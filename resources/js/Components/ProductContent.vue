@@ -2,22 +2,18 @@
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import axios from 'axios';
 import Modal from './Modal.vue';
-import ModalExcluir from './ModalExcluir.vue';
 </script>
 <script>
-import ModalExcluirVue from './ModalExcluir.vue';
 import modal from './Modal.vue';
 
   export default {
     name: 'ProductContent',
     components: {
       Modal,
-      ModalExcluirVue
     },
     data() {
       return {
         isModalVisible: false,
-        isModalExcluirVisible: false,
         produtos : [],
       };
     },
@@ -34,22 +30,15 @@ import modal from './Modal.vue';
       closeModal() {
         this.isModalVisible = false;
       },
-      showModalExcluir() {
-        this.isModalExcluirVisible = true;
-      },
-      closeModalExcluir() {
-        this.isModalExcluirVisible = false;
-      },
-      deleta(id){
-        alert(id)
-        this.isModalExcluirVisible = false
-        // axios.delete('/deleteProduct', 
-        // { params: { id: id } }
-        // ).then((data) => {
-        //     console.log(data)
-        // }).catch((error)=>{
-        //     console.log(error)
-        // })
+      delete(id){
+        alert("deletado com sucesso")
+        axios.delete('/deleteProduct', 
+        { params: { id: id } }
+        ).then((data) => {
+            console.log(data)
+        }).catch((error)=>{
+            console.log(error)
+        })
         this.getAllOrderByName()
       }
     },
@@ -121,7 +110,7 @@ import modal from './Modal.vue';
                                 
                                 <td  class="focus:text-indigo-600 ">
                                     <div class="flex items-center pl-5">
-                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">({{produto.id}}) {{produto.name}}</p>
+                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">{{produto.name}}</p>
                                     </div>
                                 </td>
                                 <td class="pl-24">
@@ -145,9 +134,8 @@ import modal from './Modal.vue';
                                     </div>
                                 </td>
                                 <td class="pl-5">
-                                    <div class="flex items-center">
-                                        <ModalExcluir v-show="isModalExcluirVisible" @close="closeModalExcluir" @callDeleta="deleta(id)" :mid="produto.id"/>
-                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="showModalExcluir"/>
+                                        <div class="flex items-center">
+                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="delete(produto.id)"/>
                                     </div>
                                 </td>
                             </tr>
