@@ -4,6 +4,9 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import AllLeads from '../Components/AllLeads.vue';
 
 </script>
+<style>
+body {background-color: #E7F6FE;}
+</style>
 <template>
   <AppLayout title="Dashboard">
 

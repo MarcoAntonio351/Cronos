@@ -2,22 +2,19 @@
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import axios from 'axios';
 import Modal from './Modal.vue';
-import ModalExcluir from './ModalExcluir.vue';
 </script>
 <script>
-import ModalExcluirVue from './ModalExcluir.vue';
 import modal from './Modal.vue';
 
   export default {
     name: 'ProductContent',
     components: {
       Modal,
-      ModalExcluirVue
+
     },
     data() {
       return {
         isModalVisible: false,
-        isModalExcluirVisible: false,
         produtos : [],
       };
     },
@@ -34,22 +31,15 @@ import modal from './Modal.vue';
       closeModal() {
         this.isModalVisible = false;
       },
-      showModalExcluir() {
-        this.isModalExcluirVisible = true;
-      },
-      closeModalExcluir() {
-        this.isModalExcluirVisible = false;
-      },
       deleta(id){
-        alert(id)
-        this.isModalExcluirVisible = false
-        // axios.delete('/deleteProduct', 
-        // { params: { id: id } }
-        // ).then((data) => {
-        //     console.log(data)
-        // }).catch((error)=>{
-        //     console.log(error)
-        // })
+        alert("deletado com sucesso")
+        axios.delete('/deleteProduct', 
+        { params: { id: id } }
+        ).then((data) => {
+            console.log(data)
+        }).catch((error)=>{
+            console.log(error)
+        })
         this.getAllOrderByName()
       }
     },
@@ -58,9 +48,11 @@ import modal from './Modal.vue';
     },
   };
 </script>
-
+<style>
+body {background-color: #E7F6FE;}
+</style>
 <Modal/>
-<template>
+<template class>
 <div class="sm:px-6 w-full m-0">
             <div class="px-4 md:px-10 py-4 md:py-7">
                 <div class="flex items-center justify-between">
@@ -81,8 +73,8 @@ import modal from './Modal.vue';
                         <p class="text-sm font-medium leading-none text-white" > + Produtos</p>
                     </button>
                 </div>
-                <div class="mt-7 overflow-y-auto h-[36rem]">
-                    <table class="w-full whitespace-nowrap">
+                <div class="shadow-xl mt-7 overflow-y-auto h-[36rem]">
+                    <table class="shadow-xl w-full whitespace-nowrap">
                         <tbody>
                             <tr tabindex="0" class="focus:outline-none h-16 rounded bg-gradient-to-r from-blue-700 via-blue-800 to-blue-800">
                                 <td class="">
@@ -146,8 +138,7 @@ import modal from './Modal.vue';
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <ModalExcluir v-show="isModalExcluirVisible" @close="closeModalExcluir" @callDeleta="deleta(id)" :mid="produto.id"/>
-                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="showModalExcluir"/>
+                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="deleta(produto.id)"/>
                                     </div>
                                 </td>
                             </tr>

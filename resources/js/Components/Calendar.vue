@@ -147,6 +147,9 @@ export default Demo
 </template>
 
 <style lang='css'>
+body {
+  background-color: #E7F6FE;
+}
 h2 {
   margin: 0;
   font-size: 16px;

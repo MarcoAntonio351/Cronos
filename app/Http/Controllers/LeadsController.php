@@ -60,4 +60,22 @@ class LeadsController extends Controller
             }
         }
     }
+    public function delete(Request $request){
+        try {
+            $leads = Leads::findOrFail($request->id);
+            $leads->delete();
+            return response()->json([
+                'status' => 'SUCESSO',
+                'titulo' => 'Remoção de produto',
+                'message' => 'Produto removido coaam sucesso!',
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'ERRO',
+                'titulo' => 'Erro ao remover produto',
+                'message' => $th->getMessage(),
+            ], 400);
+        }   
+    }
 }
+

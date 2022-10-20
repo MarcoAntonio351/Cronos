@@ -31,10 +31,10 @@ Route::get('/getAllOrderByName', [ProductsController::class, "getAllOrderByName"
 Route::post('/produto/cadastrar', [ProductsController::class, "cadastrar"]);
 Route::post('/leads/cadastrar', [LeadsController::class, "cadastrarleads"]);
 Route::get('/getAllOutfitters', [OutfittersController::class, "getAllOutfittersByName"]);
-Route::post('/outfitters/cadastrar', [OutfittersController::class, "cadastraroutfitter"]);
+Route::post('/outfitters/cadastrar', [OutfittersController::class, "cadastraroutfitter"])                                   ;
 Route::post('/calendar/cadastrar', [EventsController::class, "cadastrarevents"]);
 Route::delete('/deleteProduct', [ProductsController::class, "delete"]);
-
+Route::delete('/deleteLeads', [LeadsController::class, "delete"]);
 
 Route::middleware([
     'auth:sanctum',

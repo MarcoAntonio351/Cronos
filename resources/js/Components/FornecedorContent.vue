@@ -23,7 +23,9 @@
         }
       };
     </script>
-    
+    <style>
+    body {background-color: #E7F6FE;}
+    </style>
     <ModalOutfitters/>
     <template>
     <!-- component -->
@@ -122,7 +124,7 @@
                                     <td class="pl-5">
                                         <div class="flex items-center">
                                             <ModalExcluirVue v-show="isModalExcluirVisible" @close="closeModalExcluir"/>
-                                            <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="showModalExcluir"/>
+                                            <img src="../../images/icons8-trash-96.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="showModalExcluir"/>
                                         </div>
                                     </td>
                                 </tr>

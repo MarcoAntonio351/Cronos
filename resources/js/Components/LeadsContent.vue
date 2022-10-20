@@ -3,6 +3,9 @@
     import axios from 'axios';
 
     </script>
+    <style>
+    body {background-color: #E7F6FE;}
+    </style>
     <script>
     import ModalExcluirLeads from './ModalExcluirLeads.vue';
     import ModalLeads from './ModalLeads.vue';
@@ -11,12 +14,10 @@
         name: 'LeadsContent',
         components: {
           ModalLeads,
-          ModalExcluirLeads
         },
         data() {
           return {
-            isModalVisible: false,
-            isModalExcluirLeadsVisible: false,
+            isModalLeadsVisible: false,
             leads : [],
           };
         },
@@ -28,28 +29,23 @@
             })
           },
           showModalLeads() {
-            this.isModalVisible = true;
+            this.isModalLeadsVisible = true;
           },
           closeModalLeads() {
-            this.isModalVisible = false;
-          },
-          showisModalExcluirLeads() {
-            this.isModalExcluirLeadsVisible = true;
-          },
-          closeisModalExcluirLeads() {
-            this.isModalExcluirLeadsVisible = false;
+            this.isModalLeadsVisible = false;
           },
           deleta(id){
-            axios.delete('/deleteLeads', 
-            { params: { id: id } }
-            ).then((data) => {
-                console.log(data)
-            }).catch((error)=>{
-                console.log(error)
-            })
-            this.getAllLeads()
-          }
-        },
+
+        axios.delete('/deleteLeads', 
+        { params: { id: id } }
+        ).then((data) => {
+            console.log(data)
+        }).catch((error)=>{
+            console.log(error)
+        })
+        this.getAllLeads()
+      }
+    },
         created(){
           this.getAllLeads()                 
         },
@@ -76,7 +72,7 @@
                     </div>
                     <div class="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
                         <div class="sm:flex items-center justify-left">
-                            <ModalLeads v-show="isModalVisible" @close="closeModal"/>
+                            <ModalLeads v-show="isModalLeadsVisible" @close="closeModalLeads"/>
                             <button @click="showModalLeads" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-left px-6 py-3 bg-blue-800 hover:bg-blue-900  focus:outline-none rounded">
                                 <p class="text-sm font-medium leading-none text-white" > + Leads</p>
                             </button>
@@ -145,9 +141,8 @@
                                         </td>
                                     <td class="pl-5">
                                         <div class="flex items-center">
-                                            <ModalExcluirLeads v-show="isModalExcluirLeadsVisible" @close="closeisModalExcluirLeads"/>
-                                            <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="showisModalExcluirLeads"/>
-                                        </div>
+                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="deleta(leads.id)"/>
+                                    </div>
                                     </td>
                                 </tr>
                                 <tr class="h-3"></tr>

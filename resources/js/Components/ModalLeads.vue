@@ -1,45 +1,42 @@
-<script setup>
-  import { Head, Link } from '@inertiajs/inertia-vue3';
-  // import axios from 'axios';
-  import Modal from './Modal.vue';
-  </script>
 <script>
-  import axios from 'axios';
-  
-    export default {
-      name: 'ModalLeads',
-      data: function() {
-          return {
-              'name': '',
-              'phone': '',
-              'email': '',
-              'organization': '',
-              'gender': '',
-          }
-      },
-      methods: {
-        cadastrar(){
-          axios.post('/leads/cadastrar', {
-              'name' : this.name,
-              'phone': this.phone,
-              'email': this.email,
-              'organization': this.organization,
-              'gender': this.gender,
-          }).then((data) => {
-            // console.log(data)
-            this.LeadsContent.getAllLeads();
-            this.$emit('close');
-            // alert("mandei saporra: " + data.data.message)
-          }).catch((erro) => {
-            console.error(erro)
-            alert("caguei saporra: " + erro.titulo + erro.message)
+import axios from 'axios';
+
+  export default {
+    name: 'ModalLeads',
+    data: function() {
+        return {
+            'name': '',
+            'phone': '',
+            'email': '',
+            'organization': '',
+            'gender': '',
+        }
+    },
+    methods: {
+      cadastrar(){
+        axios.post('/leads/cadastrar', {
+            'name' : this.name,
+            'phone': this.phone,
+            'email': this.email,
+            'organization': this.organization,
+            'gender': this.gender,
+        }).then((data) => {
+          // console.log(data)
+            axios.get('/getAllLeads').then((data) => {
+            this.produtos = data.data
           })
-        },
-        close() {
           this.$emit('close');
-        },
+          // alert("mandei saporra: " + data.data.message)
+        }).catch((erro) => {
+          console.error(erro)
+          alert("caguei saporra: " + erro.titulo + erro.message)
+        })
       },
-    };
+      close() {
+        this.$emit('close');
+      },
+    },
+  };
   </script>
 <template>
   <div class="modal-backdrop">
