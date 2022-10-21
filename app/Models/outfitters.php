@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class outfitters extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'email', 'description',' phone', 'productf', 'adress', 'user_id'];
+    protected $fillable = ['name', 'email',' phone', 'productf', 'adress', 'user_id'];
 
     //chave estrangeira
     public function user(){

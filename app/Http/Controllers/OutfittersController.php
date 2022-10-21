@@ -18,14 +18,14 @@ class OutfittersController extends Controller
         return $outfitter;
     }
 
-    public function cadastraroutfitter(Request $request){
+    public function cadastrarout(Request $request){
         //cria regras para validar os dados recebidos
 
         $validacao = Validator::make($request->all(), [
             'name' => 'required',
             'email',
             'phone',
-            'productf' => 'required',
+            'productf',
             'adress',
         ]);
         if($validacao->fails()){

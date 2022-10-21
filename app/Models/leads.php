@@ -10,6 +10,7 @@ class leads extends Model
     use HasFactory;
     protected $fillable = ['name', 'phone','email', 'organization', 'gender'];
 
+
     //chave estrangeira
     public function user(){
         return $this->belongsTo(User::class, 'user_id');

@@ -4,10 +4,9 @@
 
     </script>
     <style>
-    body {background-color: #E7F6FE;}
+    body {background-color: #fbfbfb;}
     </style>
     <script>
-    import ModalExcluirLeads from './ModalExcluirLeads.vue';
     import ModalLeads from './ModalLeads.vue';
     
       export default {
@@ -18,6 +17,8 @@
         data() {
           return {
             isModalLeadsVisible: false,
+
+        
             leads : [],
           };
         },
@@ -34,18 +35,17 @@
           closeModalLeads() {
             this.isModalLeadsVisible = false;
           },
-          deleta(id){
-
-        axios.delete('/deleteLeads', 
-        { params: { id: id } }
-        ).then((data) => {
-            console.log(data)
-        }).catch((error)=>{
-            console.log(error)
-        })
-        this.getAllLeads()
-      }
-    },
+          delete(id){
+            axios.delete('/deleteLeads', 
+            { params: { id: id } }
+            ).then((data) => {
+                console.log(data)
+            }).catch((error)=>{
+                console.log(error)
+            })
+            this.getAllLeads()
+          }
+        },
         created(){
           this.getAllLeads()                 
         },
@@ -141,7 +141,10 @@
                                         </td>
                                     <td class="pl-5">
                                         <div class="flex items-center">
-                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="deleta(leads.id)"/>
+
+
+                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="delete(leads.id)"/>
+
                                     </div>
                                     </td>
                                 </tr>

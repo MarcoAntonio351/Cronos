@@ -27,16 +27,10 @@ defineProps({
             <div class="hidden justify-between items-center w-full lg:flex lg:w-2/5 lg:order-1" id="mobile-menu-2">
                 <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                     <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-black" aria-current="page">Home</a>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-indigo-800 text-opacity-50 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Atualizações</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-indigo-800 text-opacity-50 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Marketplace</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-indigo-800 text-opacity-50 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Features</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-indigo-800 text-opacity-50 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-indigo-800 text-opacity-50 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contatos</a>
                     </li>
                     <div v-if="canLogin" class="pl-80 flex space-x-7">
             <Link v-if="$page.props.user" :href="route('dashboard')" class="float-right py-2 pr-4 pl-5 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-blue-700 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
@@ -49,7 +43,7 @@ defineProps({
                 </Link>
 
                 <Link v-if="canRegister" :href="route('register')" class="float-right block py-4 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-800 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                    Register
+                    Registro
                 </Link>
 
                 
@@ -73,7 +67,7 @@ defineProps({
             <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
                 <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Pensado para</p>
                 <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Marketing</h3>
-                <p class="mt-5 text-lg text-gray-700 text md:text-left">Crafting your user experience has never been easier, with our intuitive drag'n drop interface you will be creating beatiful designs in no time.</p>
+                <p class="mt-5 text-lg text-gray-700 text md:text-left">Em breve vai ter um texto aqui.</p>
             </div>
         </div>
         <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
@@ -81,9 +75,9 @@ defineProps({
                 <img src="../../images/clock.gif" class="rounded-lg shadow-xl" alt="Cronos Logo" />
             </div>
             <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pl-16">
-                <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">know your data</p>
+                <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Título</p>
                 <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Tempo</h3>
-                <p class="mt-5 text-lg text-gray-700 text md:text-left">Backed by data, these templates have been crafted for ultimate optimization. Now, converting your visitors into customers is easier than ever before.</p>
+                <p class="mt-5 text-lg text-gray-700 text md:text-left">em breve vai ter um texto aqui.</p>
             </div>
         </div>
         <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
@@ -91,9 +85,9 @@ defineProps({
                 <img src="../../images/agenda.gif" class="rounded-lg shadow-xl" alt="Cronos Logo" />
             </div>
             <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
-                <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Easy to customize</p>
+                <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Título</p>
                 <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Agenda</h3>
-                <p class="mt-5 text-lg text-gray-700 text md:text-left">All templates and components are fully customizable. You can use these templates to tell your personal story and convey your message.</p>
+                <p class="mt-5 text-lg text-gray-700 text md:text-left">em breve vai ter um texto aqui.</p>
             </div>
         </div>
 
@@ -104,9 +98,9 @@ defineProps({
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap text-left lg:text-left">
       <div class="w-full lg:w-6/12 px-4">
-        <h4 class="text-3xl fonat-semibold text-blueGray-700">Let's keep in touch!</h4>
+        <h4 class="text-3xl fonat-semibold text-blueGray-700">Rodapé</h4>
         <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-          Find us on any of these platforms, we respond 1-2 business days.
+          Sim.
         </h5>
         <div class="mt-6 lg:mb-0 mb-6">
           <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
@@ -120,10 +114,10 @@ defineProps({
       <div class="w-full lg:w-6/12 px-4">
         <div class="flex flex-wrap items-top mb-6">
           <div class="w-full lg:w-4/12 px-4 ml-auto">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
+            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Links</span>
             <ul class="list-unstyled">
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">Sobre nós</a>
               </li>
               <li>
                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
@@ -131,25 +125,16 @@ defineProps({
               <li>
                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
               </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
-              </li>
             </ul>
           </div>
           <div class="w-full lg:w-4/12 px-4">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Other Resources</span>
+            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Sim,</span>
             <ul class="list-unstyled">
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Licença</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contato</a>
               </li>
             </ul>
           </div>
@@ -160,7 +145,7 @@ defineProps({
     <div class="flex flex-wrap items-center md:justify-between justify-center">
       <div class="w-full md:w-4/12 px-4 mx-auto text-center">
         <div class="text-sm text-blueGray-500 font-semibold py-1">
-          Copyright © <span id="get-current-year">2021</span>
+          Copyright © <span id="get-current-year">Cronos 2022</span>
         </div>
       </div>
     </div>

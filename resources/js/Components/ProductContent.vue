@@ -49,7 +49,7 @@ import modal from './Modal.vue';
   };
 </script>
 <style>
-body {background-color: #E7F6FE;}
+body {background-color: #fbfbfb;}
 </style>
 <Modal/>
 <template class>
@@ -113,7 +113,7 @@ body {background-color: #E7F6FE;}
                                 
                                 <td  class="focus:text-indigo-600 ">
                                     <div class="flex items-center pl-5">
-                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">{{produto.name}}</p>
+                                        <p class="text-base font-medium leading-none text-gray-700 mr-2"> {{produto.name}}</p>
                                     </div>
                                 </td>
                                 <td class="pl-24">

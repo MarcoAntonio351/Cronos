@@ -1,44 +1,44 @@
-<script setup>
-  import { Head, Link } from '@inertiajs/inertia-vue3';
-  // import axios from 'axios';
-  </script>
 <script>
-  import axios from 'axios';
-  
-    export default {
-      name: 'ModalOutfitters',
-      data: function() {
-          return {
-              'name': '',
-              'email': '',
-              'phone': '',
-              'productf': '',
-              'adress': '',
-          }
-      },
-      methods: {
-        cadastrar(){
-          axios.post('/outfitters/cadastrar', {
-              'name' : this.name,
-              'email': this.phone,
-              'phone': this.email,
-              'productf': this.organization,
-              'adress': this.gender,
-          }).then((data) => {
-            // console.log(data)
-            this. OutfittersContent.getAllOutfitters();
-            this.$emit('close');
-            // alert("mandei saporra: " + data.data.message)
-          }).catch((erro) => {
-            console.error(erro)
-            alert("caguei saporra: " + erro.titulo + erro.message)
+import axios from 'axios';
+
+  export default {
+    name: 'ModalOutfitters',
+    data: function() {
+        return {
+            'name': '',
+            'email': '',
+            'description': '',
+            'phone': '',
+            'productf': '',
+            'adress': '',
+
+        }
+    },
+    methods: {
+      cadastrar(){
+        axios.post('/outfitters/cadastrar', {
+            'name' : this.name,
+            'email': this.email,
+            'phone': this.phone,
+            'productf': this.productf,
+            'adress': this.adress,
+        }).then((data) => {
+          // console.log(data)
+            axios.get('/getAllOutfitters').then((data) => {
+            this.produtos = data.data
           })
-        },
-        close() {
           this.$emit('close');
-        },
+          // alert("mandei saporra: " + data.data.message)
+        }).catch((erro) => {
+          console.error(erro)
+          alert("caguei saporra: " + erro.titulo + erro.message)
+        })
       },
-    };
+      close() {
+        this.$emit('close');
+      },
+    },
+  };
   </script>
 <template>
   <div class="modal-backdrop">
@@ -55,20 +55,19 @@
                         </div>
                         <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Insira as informações</h1>
                         <label for="name" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nome</label>
-                        <input id="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+                        <input id="name" v-model="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
                         <label for="tel" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Telefone</label>
-                        <input id="tel" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="99543221" />
+                        <input id="tel" v-model="phone" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="99543221" />
                            <label for="email" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Email</label>
-                        <input id="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="felipinhozika@gmail.com" />
-                           <label for="org" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Organização</label>
-                        <input id="org" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
-                        <label for="org" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Endereço</label>
-                        <input id="org" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Av sexo" />
-                           <label for="org" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Produto fornecido</label>
-                        <input id="org" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="coito gratis" />
+                        <input id="email" v-model="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="felipinhozika@gmail.com" />
+                           <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">ProdutoFornecido</label>
+                        <input id="gen" v-model="productf" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Produto fornecido" />
+                         <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Endereço</label>
+                        <input id="gen" v-model="adress" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Endereço" />
                      <div class="flex items-center justify-start w-full">
+                     
 
-                      <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar">Enviar</button>
+                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar">Enviar</button>
 
                             <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" @click="close">Cancelar</button>
 
@@ -79,4 +78,3 @@
         </div>
     </div>
 </template>
-

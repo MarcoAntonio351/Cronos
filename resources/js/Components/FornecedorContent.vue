@@ -23,9 +23,7 @@
         }
       };
     </script>
-    <style>
-    body {background-color: #E7F6FE;}
-    </style>
+    
     <ModalOutfitters/>
     <template>
     <!-- component -->
@@ -68,11 +66,6 @@
                                             <p class="text-sm leading-none text-white ml-2">Email</p>
                                         </div>
                                     </td>
-                                     <td class="pl-5">
-                                        <div class="flex items-center">
-                                            <p class="text-sm leading-none text-white ml-2">Organização</p>
-                                        </div>
-                                    </td>
                                     <td class="pl-5">
                                         <div class="flex items-center">
                                             <p class="text-sm leading-none text-white ml-2">Endereço</p>
@@ -89,43 +82,40 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="h-3"></tr>
-                                <tr tabindex="0" class="focus:outline-none  h-16 border border-gray-100 rounded">
-                                    <td  class="focus:text-indigo-600 ">
-                                        <div class="flex items-center pl-5">
-                                            <p class="text-base font-medium leading-none text-gray-700 mr-2">João Fernando</p>
-                                        </div>
-                                    </td>
-                                    <td class="pl-24">
-                                        <div class="flex items-center">
-                                            <p class="text-sm leading-none text-gray-600 ml-2">9987654</p>
-                                        </div>
-                                    </td>
+                               <tr class="h-3"></tr>
+                                    <tr tabindex="0" class="focus:outline-none  h-16 border border-gray-100 rounded" v-for="outfitters in outfitters" :key="outfitters.id">
+                                        <td  class="focus:text-indigo-600 ">
+                                            <div class="flex items-center pl-5">
+                                                <p class="text-base font-medium leading-none text-gray-700 mr-2">{{outfitters.name}}</p>
+                                            </div>
+                                        </td>
+                                        <td class="pl-24">
+                                            <div class="flex items-center">
+                                                <p class="text-sm leading-none text-gray-600 ml-2">{{outfitters.phone}}</p>
+                                            </div>
+                                        </td>
+                                        <td class="pl-5">
+                                            <div class="flex items-center">
+                                                <p class="text-sm leading-none text-gray-600 ml-2">{{outfitters.email}}</p>
+                                            </div>
+                                        </td>
+                                        <td class="pl-5">
+                                            <div class="flex items-center">
+                                                <p class="text-sm leading-none text-gray-600 ml-2">{{outfitters.organization}}</p>
+                                            </div>
+                                        </td>
+                                        <td class="pl-5">
+                                            <div class="flex items-center">
+                                                <p class="text-sm leading-none text-gray-600 ml-2">{{outfitters.gender}}</p>
+                                            </div>
+                                        </td>
                                     <td class="pl-5">
                                         <div class="flex items-center">
-                                            <p class="text-sm leading-none text-gray-600 ml-2">jf@FERN22</p>
-                                        </div>
-                                    </td>
-                                    <td class="pl-5">
-                                        <div class="flex items-center">
-                                            <p class="text-sm leading-none text-gray-600 ml-2">Rapazes</p>
-                                        </div>
-                                    </td>
-                                    <td class="pl-5">
-                                        <div class="flex items-center">
-                                            <p class="text-sm leading-none text-gray-600 ml-2">Rapazes house</p>
-                                        </div>
-                                    </td>
-                                    <td class="pl-5">
-                                        <div class="flex items-center">
-                                            <p class="text-sm leading-none text-gray-600 ml-2">camisinha</p>
-                                        </div>
-                                    </td>
-                                    <td class="pl-5">
-                                        <div class="flex items-center">
-                                            <ModalExcluirVue v-show="isModalExcluirVisible" @close="closeModalExcluir"/>
-                                            <img src="../../images/icons8-trash-96.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="showModalExcluir"/>
-                                        </div>
+
+
+                                        <img src="../../images/trash3.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="delete(outfitters.id)"/>
+
+                                    </div>
                                     </td>
                                 </tr>
                                 <tr class="h-3"></tr>
@@ -135,3 +125,4 @@
                 </div>
             </div>
     </template>
+    
