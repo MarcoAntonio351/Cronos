@@ -123,7 +123,7 @@ export default Demo
 <template>
   <div class='demo-app'>
     <!-- <div class='demo-app-sidebar'> -->
-      <div class='demo-app-sidebar-section'>
+      <!-- <div class='demo-app-sidebar-section'>
         <h2>All Events ({{ currentEvents.length }})</h2>
         <ul>
           <li v-for='event in currentEvents' :key='event.id'>
@@ -143,12 +143,11 @@ export default Demo
         </template>
       </FullCalendar>
     </div>
-  </div>
 </template>
 
 <style lang='css'>
 body {
-  background-color: #E7F6FE;
+  background-color: white;
 }
 h2 {
   margin: 0;
@@ -170,6 +169,7 @@ b { /* used for event dates/times */
   min-height: 100%;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
+  
 }
 .demo-app-sidebar {
   width: 300px;
