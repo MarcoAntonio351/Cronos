@@ -23,13 +23,13 @@ import axios from 'axios';
         }).then((data) => {
           // console.log(data)
             axios.get('/getAllLeads').then((data) => {
-            this.produtos = data.data
+            this.leads = data.data
           })
           this.$emit('close');
           // alert("mandei saporra: " + data.data.message)
         }).catch((erro) => {
           console.error(erro)
-          alert("caguei saporra: " + erro.titulo + erro.message)
+          alert("erro: " + erro.titulo + erro.message)
         })
       },
       close() {

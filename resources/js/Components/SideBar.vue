@@ -48,13 +48,6 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
 
           <div id="menu" class="flex flex-col space-y-2">
             <a
-              href="/dashboard"
-              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
-            >
-              <img  class="w-8 h-8 fill-current inline-block" src="../../images/inicio.png" alt="">
-              <span class="ml-2">Início</span>
-            </a>
-            <a
               href="/produtos"
               class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
             >

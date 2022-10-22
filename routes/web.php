@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\LeadsController;
+use App\Http\Controllers\OutfittersController;
+use App\Http\Controllers\EventsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +34,11 @@ Route::get('/getAllOrderByName', [ProductsController::class, "getAllOrderByName"
 Route::post('/produto/cadastrar', [ProductsController::class, "cadastrar"]);
 Route::post('/leads/cadastrar', [LeadsController::class, "cadastrarleads"]);
 Route::get('/getAllOutfitters', [OutfittersController::class, "getAllOutfittersByName"]);
-Route::post('/outfitters/cadastrar', [OutfittersController::class, "cadastrarout"]);                                   ;
-Route::post('/calendar/cadastrar', [EventsController::class, "cadastrarevents"]);
+Route::post('/outfitters/cadastrar', [OutfittersController::class, "cadastrar"]);                                   ;
+Route::post('/calendar/cadastrar', [EventsController::class, "cadastrar"]);
 Route::delete('/deleteProduct', [ProductsController::class, "delete"]);
 Route::delete('/deleteLeads', [LeadsController::class, "delete"]);
+Route::delete('/deleteOutfitters', [OutfittersController::class, "delete"]);
 
 
 

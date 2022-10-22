@@ -1,3 +1,5 @@
+
+
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import axios from 'axios';
@@ -5,12 +7,10 @@ import Modal from './Modal.vue';
 </script>
 <script>
 import modal from './Modal.vue';
-
   export default {
     name: 'ProductContent',
     components: {
       Modal,
-
     },
     data() {
       return {
@@ -18,7 +18,6 @@ import modal from './Modal.vue';
         produtos : [],
       };
     },
-
     methods: {
         getAllOrderByName(){
         axios.get('/getAllOrderByName').then((data) => {
@@ -138,7 +137,7 @@ body {background-color: #fbfbfb;}
                                 </td>
                                 <td class="pl-5">
                                     <div class="flex items-center">
-                                        <img src="../../images/trash2.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="deleta(produto.id)"/>
+                                        <img src="../../images/trash3.png" class="mr-5 h-6 sm:h-9 cursor-pointer" alt="trash" @click="deleta(produto.id)"/>
                                     </div>
                                 </td>
                             </tr>

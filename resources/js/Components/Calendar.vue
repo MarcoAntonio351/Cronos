@@ -84,7 +84,6 @@ const Demo = defineComponent({
           allDay: selectInfo.allDay
         })
       }
-
       axios.post('/calendar/cadastrar', {
           'date' : selectInfo.startStr,
           'title': title,
@@ -96,7 +95,6 @@ const Demo = defineComponent({
         console.error(erro)
         alert("erro: " + erro.titulo + erro.message)
       })
-
       let newArray = this.currentEvents.map((event)=>{
         return ({
           title: event.title,
@@ -116,7 +114,6 @@ const Demo = defineComponent({
     },
   }
 })
-
 export default Demo
 </script>
 
@@ -189,3 +186,4 @@ b { /* used for event dates/times */
   margin: 0 auto;
 }
 </style>
+Footer

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone');
+            $table->integer('phone');
             $table->string('productf');
             $table->string("adress");
             $table->foreignId('user_id')->index();

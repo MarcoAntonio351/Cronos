@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Leads as ControllersOutfitters;
 use Illuminate\Http\Request;
-
 use App\Models\Outfitters;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +16,7 @@ class OutfittersController extends Controller
         return $outfitter;
     }
 
-    public function cadastrarout(Request $request){
+    public function cadastrar(Request $request){
         //cria regras para validar os dados recebidos
 
         $validacao = Validator::make($request->all(), [
@@ -55,5 +53,22 @@ class OutfittersController extends Controller
                 ], 400);
             }
         }
+    }
+    public function delete(Request $request){
+        try {
+            $outfitters = Outfitters::findOrFail($request->id);
+            $outfitters->delete();
+            return response()->json([
+                'status' => 'SUCESSO',
+                'titulo' => 'Remoção de produto',
+                'message' => 'Produto removido coaam sucesso!',
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'ERRO',
+                'titulo' => 'Erro ao remover produto',
+                'message' => $th->getMessage(),
+            ], 400);
+        }   
     }
 }
