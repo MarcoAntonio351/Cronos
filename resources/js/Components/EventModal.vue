@@ -14,7 +14,7 @@
           <input type="date" v-model="start">
           <input type="date" v-model="end">
   
-          <button @click="updateEvent">Save</button>
+          <button @click="updateEvent">Salvar</button>
       </fieldset>
     </div>
   </template>

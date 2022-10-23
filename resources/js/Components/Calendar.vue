@@ -72,7 +72,7 @@ const Demo = defineComponent({
       console.log(newArray)
     },
     handleDateSelect(selectInfo: DateSelectArg) {
-      let title = prompt('Please enter a new title for your event')
+      let title = prompt('Por favor digite um Evento')
       let calendarApi = selectInfo.view.calendar
       calendarApi.unselect() // clear date selection
       if (title) {
@@ -92,8 +92,6 @@ const Demo = defineComponent({
         this.event.cadastrarevents();
         // alert("mandei saporra: " + data.data.message)
       }).catch((erro) => {
-        console.error(erro)
-        alert("erro: " + erro.titulo + erro.message)
       })
       let newArray = this.currentEvents.map((event)=>{
         return ({
@@ -105,7 +103,7 @@ const Demo = defineComponent({
       console.log(newArray)
     },
     handleEventClick(clickInfo: EventClickArg) {
-      if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+      if (confirm(`Tem certeza que deseja deletar o evento? '${clickInfo.event.title}'`)) {
         clickInfo.event.remove()
       }
     },
@@ -119,15 +117,17 @@ export default Demo
 
 <template>
   <div class='demo-app'>
-    <!-- <div class='demo-app-sidebar'> -->
-      <!-- <div class='demo-app-sidebar-section'>
-        <h2>All Events ({{ currentEvents.length }})</h2>
+    <!-- <div class='demo-app-sidebar'>
+      <div class='demo-app-sidebar-section'>
+        <h2>Todos os eventos({{ currentEvents.length }})</h2>
         <ul>
           <li v-for='event in currentEvents' :key='event.id'>
             <b>{{ event.startStr }}</b>
             <i>{{ event.title }}</i>
           </li>
-        </ul> -->
+        </ul>
+      </div>
+    </div> -->
       </div>
     <div class='demo-app-main'>
       <FullCalendar
@@ -169,20 +169,20 @@ b { /* used for event dates/times */
   
 }
 .demo-app-sidebar {
-  width: 300px;
+  width: 200px;
   line-height: 1.5;
-  background: #eaf9ff;
-  border-right: 1px solid #d3e2e8;
+  background: #ffffff;
+  border-right: 1px solid #ffffff;
 }
 .demo-app-sidebar-section {
-  padding: 2em;
+  padding: 1em;
 }
 .demo-app-main {
   flex-grow: 1;
   padding: 3em;
 }
 .fc { /* the calendar root */
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 </style>

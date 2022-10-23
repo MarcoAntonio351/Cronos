@@ -59,9 +59,9 @@ import axios from 'axios';
                         <label for="tel" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Telefone</label>
                         <input id="tel" v-model="phone" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="99543221" />
                            <label for="email" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Email</label>
-                        <input id="email" v-model="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="felipinhozika@gmail.com" />
+                        <input id="email" v-model="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QcBrasil@exemplo.com" />
                            <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">ProdutoFornecido</label>
-                        <input id="gen" v-model="productf" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Produto fornecido" />
+                        <input id="gen" v-model="productf" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Garrafa" />
                          <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Endereço</label>
                         <input id="gen" v-model="adress" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Endereço" />
                      <div class="flex items-center justify-start w-full">

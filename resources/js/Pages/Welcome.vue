@@ -26,24 +26,18 @@ defineProps({
             </div>
             <div class="hidden justify-between items-center w-full lg:flex lg:w-2/5 lg:order-1" id="mobile-menu-2">
                 <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-indigo-800 text-opacity-50 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Atualizações</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-indigo-800 text-opacity-50 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contatos</a>
-                    </li>
-                    <div v-if="canLogin" class="pl-80 flex space-x-7">
+                    <div v-if="canLogin" class="self-center absolute z-50 origin-top-right right-5 flex space-x-5">
             <Link v-if="$page.props.user" :href="route('products')" class="float-right py-2 pr-4 pl-5 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-blue-700 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
                 Inicio
             </Link>
 
             <template v-else>
                 <Link :href="route('login')" class="float-right py-2 pr-4 pl-5 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-blue-700 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                    Login
+                    Entrar
                 </Link>
 
                 <Link v-if="canRegister" :href="route('register')" class="float-right block py-4 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-800 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                    Registro
+                    Registrar
                 </Link>
 
                 
@@ -65,9 +59,9 @@ defineProps({
                 <img src="../../images/marketing.gif" class="rounded-lg shadow-xl" alt="Cronos Logo" />
             </div>
             <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
-                <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Pensado para</p>
+                <p class="mb-2 text-sm font-semibold leading-none text-left text-blue-800 uppercase">Pensado para o</p>
                 <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Marketing</h3>
-                <p class="mt-5 text-lg text-gray-700 text md:text-left">Em breve vai ter um texto aqui.</p>
+                <p class="mt-5 text-lg text-gray-700 text md:text-left">Faça uma lista de seus leads e administre melhor seus futuros clientes.</p>
             </div>
         </div>
         <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
@@ -75,9 +69,8 @@ defineProps({
                 <img src="../../images/clock.gif" class="rounded-lg shadow-xl" alt="Cronos Logo" />
             </div>
             <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pl-16">
-                <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Título</p>
                 <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Tempo</h3>
-                <p class="mt-5 text-lg text-gray-700 text md:text-left">em breve vai ter um texto aqui.</p>
+                <p class="mt-5 text-lg text-gray-700 text md:text-left">Economize seu tempo, liste seus fornecedores e produtos.</p>
             </div>
         </div>
         <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
@@ -85,9 +78,8 @@ defineProps({
                 <img src="../../images/agenda.gif" class="rounded-lg shadow-xl" alt="Cronos Logo" />
             </div>
             <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
-                <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Título</p>
                 <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Agenda</h3>
-                <p class="mt-5 text-lg text-gray-700 text md:text-left">em breve vai ter um texto aqui.</p>
+                <p class="mt-5 text-lg text-gray-700 text md:text-left">Marque eventos em nossa agenda e não perca uma reunião importante.</p>
             </div>
         </div>
 

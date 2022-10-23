@@ -79,11 +79,11 @@ const clearPhotoFileInput = () => {
 <template>
     <JetFormSection @submitted="updateProfileInformation">
         <template #title>
-            Profile Information
+            Informações do Perfil
         </template>
 
         <template #description>
-            Update your account's profile information and email address.
+            Atualize suas Informações.
         </template>
 
         <template #form>
@@ -130,7 +130,7 @@ const clearPhotoFileInput = () => {
 
             <!-- Name -->
             <div class="col-span-6 sm:col-span-4">
-                <JetLabel for="name" value="Name" />
+                <JetLabel for="name" value="Nome" />
                 <JetInput
                     id="name"
                     v-model="form.name"
@@ -176,11 +176,11 @@ const clearPhotoFileInput = () => {
 
         <template #actions>
             <JetActionMessage :on="form.recentlySuccessful" class="mr-3">
-                Saved.
+                Salvo.
             </JetActionMessage>
 
             <JetButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Save
+                Salvar
             </JetButton>
         </template>
     </JetFormSection>

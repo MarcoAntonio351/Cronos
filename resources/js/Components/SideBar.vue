@@ -32,7 +32,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
         x-show="sidenav"
         @click="sidenav = false"
       >
-        <div class="space-y-5 md:space-y-3 mt-10">
+        <div class="space-y-5 md:space-y-6 mt-10">
           <h1 class="font-bold text-4xl text-center md:hidden">
             <span class="text-teal-600"></span>
           </h1>
@@ -45,8 +45,14 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
               class="w-10 md:w-16 rounded-full mx-auto"
             />
           </div>
-
-          <div id="menu" class="flex flex-col space-y-2">
+          <div id="menu" class="flex flex-col space-y-4">
+            <a
+              href="/dashboard"
+              class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+            >
+              <img  class="w-8 h-8 fill-current inline-block" src="../../images/inicio.png" alt="">
+              <span class="ml-2">Início</span>
+            </a>
             <a
               href="/produtos"
               class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"

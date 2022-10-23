@@ -57,7 +57,7 @@ import axios from 'axios';
                         <label for="tel" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Telefone</label>
                         <input id="tel" v-model="phone" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="99543221" />
                            <label for="email" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Email</label>
-                        <input id="email" v-model="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="felipinhozika@gmail.com" />
+                        <input id="email" v-model="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QcBrasil@exemplo.com" />
                            <label for="org" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Organização</label>
                         <input id="org" v-model="organization" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
                            <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Gênero</label>

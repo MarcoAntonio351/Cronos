@@ -57,12 +57,12 @@
                     <div class="px-4 md:px-10 py-4 md:py-7">
                         <div class="flex items-center justify-between">
                             <p tabindex="0" class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Leads</p>
-                            <div class="py-3 px-4 flex items-center text-sm font-medium leading-none text-gray-600 bg-gray-200 hover:bg-gray-300 cursor-pointer rounded">
-                                <p>Sort By:</p>
+                            <div class="py-3 px-4 flex items-center text-sm font-medium leading-none text-gray-600">
+                                <!-- <p>Sort By:</p>
                                 <select aria-label="select" class="focus:text-indigo-600 focus:outline-none bg-transparent ml-1">
                                     <option class="text-sm text-indigo-800">Latest</option>
                                     <option class="text-sm text-indigo-800">Oldest</option>
-                                </select>
+                                </select> -->
                             </div>
                         </div>
                     </div>
@@ -79,17 +79,17 @@
                                     <tr tabindex="0" class="focus:outline-none h-16 rounded bg-gradient-to-r from-blue-700 via-blue-800 to-blue-800">
                                         <td class="">
                                             <div class="flex items-center pl-5">
-                                                <p class="text-base font-medium leading-none text-white-700 mr-2">Nome</p>
+                                                <p class="text-base font-medium leading-none text-white mr-2">Nome</p>
                                             </div>
                                         </td>
                                         <td class="pl-24">
                                             <div class="flex items-center">
-                                                <p class="text-sm leading-none text-white-600 ml-2">Telefone</p>
+                                                <p class="text-sm leading-none text-white ml-2">Telefone</p>
                                             </div>
                                         </td>
                                         <td class="pl-5">
                                             <div class="flex items-center">
-                                                <p class="text-sm leading-none text-white-600 ml-2">Email</p>
+                                                <p class="text-sm leading-none text-white ml-2">Email</p>
                                             </div>
                                         </td>
                                          <td class="pl-5">

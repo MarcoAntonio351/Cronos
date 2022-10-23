@@ -61,10 +61,10 @@ import axios from 'axios';
                            <label for="fornecedor" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Fornecedor</label>
                         <input id="fornecedor" v-model="provider" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QC Brasil" />
                         <label for="descrição" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Descrição</label>
-                        <input id="descrição" v-model="description" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Bonito" />
+                        <input id="descrição" v-model="description" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Pequena" />
                      <div class="flex items-center justify-start w-full">
 
-                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar()">Enviar</button>
+                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-blue-600 bg-blue-800 rounded text-white px-8 py-2 text-sm" @click="cadastrar()">Enviar</button>
 
                             <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" @click="close">Cancelar</button>
 

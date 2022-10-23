@@ -10,6 +10,6 @@ import Calendar from '../Components/Calendar.vue';
   </AppLayout>
   <div class="w-100 flex">
     <Sidebar class="w-100"/>
-    <Calendar class="w-100"/>
+    <Calendar class="mt-7 overflow-y-auto"/>
   </div>
 </template>

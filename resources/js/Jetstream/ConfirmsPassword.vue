@@ -11,15 +11,15 @@ const emit = defineEmits(['confirmed']);
 defineProps({
     title: {
         type: String,
-        default: 'Confirm Password',
+        default: 'Confirme sua senha',
     },
     content: {
         type: String,
-        default: 'For your security, please confirm your password to continue.',
+        default: 'Para sua segurança, confirme sua senha para continuar.',
     },
     button: {
         type: String,
-        default: 'Confirm',
+        default: 'Confirmar',
     },
 });
 
@@ -100,7 +100,7 @@ const closeModal = () => {
 
             <template #footer>
                 <JetSecondaryButton @click="closeModal">
-                    Cancel
+                    Cancelar
                 </JetSecondaryButton>
 
                 <JetButton
