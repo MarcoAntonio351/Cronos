@@ -1,7 +1,8 @@
 <script>
 import axios from 'axios';
-
+import {mask} from 'vue-the-mask'
   export default {
+    directives: {mask},
     name: 'ModalOutfitters',
     data: function() {
         return {
@@ -15,6 +16,11 @@ import axios from 'axios';
         }
     },
     methods: {
+      validateEmail() {
+        if (! /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
+              alert('Coloca um email válido... caraio!');
+          }
+      },
       cadastrar(){
         axios.post('/outfitters/cadastrar', {
             'name' : this.name,
@@ -24,9 +30,7 @@ import axios from 'axios';
             'adress': this.adress,
         }).then((data) => {
           // console.log(data)
-            axios.get('/getAllOutfitters').then((data) => {
-            this.produtos = data.data
-          })
+            axios.get('/getAllOutfitters').then(location.reload())
           this.$emit('close');
           // alert("mandei saporra: " + data.data.message)
         }).catch((erro) => {
@@ -57,9 +61,9 @@ import axios from 'axios';
                         <label for="name" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nome</label>
                         <input id="name" v-model="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
                         <label for="tel" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Telefone</label>
-                        <input id="tel" v-model="phone" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="99543221" />
+                        <input id="tel" v-model="phone" v-mask="['(##) ####-####', '(##) #####-####']" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="(11) 99954-3221" />
                            <label for="email" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Email</label>
-                        <input id="email" v-model="email" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QcBrasil@exemplo.com" />
+                        <input id="email" v-model="email"  @blur="validateEmail" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="QcBrasil@exemplo.com" />
                            <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">ProdutoFornecido</label>
                         <input id="gen" v-model="productf" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Garrafa" />
                          <label for="gen" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Endereço</label>
@@ -67,7 +71,7 @@ import axios from 'axios';
                      <div class="flex items-center justify-start w-full">
                      
 
-                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar">Enviar</button>
+                            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 transition duration-150 ease-in-out hover:bg-blue-600 bg-blue-700 rounded text-white px-8 py-2 text-sm" @click="cadastrar">Enviar</button>
 
                             <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" @click="close">Cancelar</button>
 

@@ -29,6 +29,7 @@
         "@fullcalendar/vue": "^5.11.2",
         "@fullcalendar/vue3": "^5.11.2",
         "vue-tailwind": "^2.5.1",
+        "vue-the-mask": "^0.11.1",
         "vuetify": "^2.6.9",
         "vuex": "^4.0.2"
     }
