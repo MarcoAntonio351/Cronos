@@ -32,10 +32,10 @@ import {mask} from 'vue-the-mask'
           // console.log(data)
             axios.get('/getAllOutfitters').then(location.reload())
           this.$emit('close');
-          // alert("mandei saporra: " + data.data.message)
+          // alert("enviado: " + data.data.message)
         }).catch((erro) => {
           console.error(erro)
-          alert("caguei saporra: " + erro.titulo + erro.message)
+          alert("erro " + erro.titulo + erro.message)
         })
       },
       close() {

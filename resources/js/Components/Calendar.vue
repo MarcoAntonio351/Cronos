@@ -52,7 +52,7 @@ const Demo = defineComponent({
     //     // console.log(data)
     //     this.event.getAllEvents();
     //     this.$emit('close');
-    //     // alert("mandei saporra: " + data.data.message)
+    //     // alert("enviado " + data.data.message)
     //   }).catch((erro) => {
     //     console.error(erro)
     //     alert("erro: " + erro.titulo + erro.message)
@@ -90,7 +90,7 @@ const Demo = defineComponent({
       }).then((data) => {
         // console.log(data)
         this.event.cadastrarevents();
-        // alert("mandei saporra: " + data.data.message)
+        // alert("enviado: " + data.data.message)
       }).catch((erro) => {
       })
       let newArray = this.currentEvents.map((event)=>{

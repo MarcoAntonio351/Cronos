@@ -30,7 +30,7 @@ export default {
           // console.log(data)
             axios.get('/getAllLeads').then(location.reload())
           this.$emit('close');
-          // alert("mandei saporra: " + data.data.message)
+          // alert("Enviado: " + data.data.message)
         }).catch((erro) => {
           console.error(erro)
           alert("erro: " + erro.titulo + erro.message)

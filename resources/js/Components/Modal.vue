@@ -24,10 +24,10 @@ import axios from 'axios';
           // console.log(data)
             axios.get('/getAllOrderByname').then(location.reload())
           this.$emit('close');
-          // alert("mandei saporra: " + data.data.message)
+          // alert("Enviado: " + data.data.message)
         }).catch((erro) => {
           console.error(erro)
-          alert("caguei saporra: " + erro.titulo + erro.message)
+          alert("erro" + erro.titulo + erro.message)
         })
       },
       close() {
