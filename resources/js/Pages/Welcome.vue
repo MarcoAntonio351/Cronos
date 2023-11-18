@@ -13,7 +13,8 @@ defineProps({
 <header>        
     <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 bg-gray-300">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <a href="https://flowbite.com" class="flex items-center">
+            <a href="" class="flex items-center">
+            
                 <img src="../../images/ampulheta.png" class="mr-5 h-6 sm:h-9" alt="Cronos Logo" />
                 <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-black">Cronos</span>
             </a>
@@ -51,8 +52,8 @@ defineProps({
 <section class="py-20 bg-white">
     <div class="flex flex-col px-8 mx-auto space-y-12 max-w-7xl xl:px-12">
         <div class="relative">
-            <h2 class="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl">Quase lá professora!</h2>
-            <p class="w-full py-8 mx-auto -mt-2 text-lg text-center text-gray-700 intro sm:max-w-3xl">Em breve estará pronto. </p>
+            <h2 class="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl">Cronos</h2>
+            <p class="w-full py-8 mx-auto -mt-2 text-lg text-center text-gray-700 intro sm:max-w-3xl">O CRM mais simples e seguro</p>
         </div>
         <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
             <div class="flex items-center mb-8 sm:w-1/2 md:w-5/12 sm:order-last">
@@ -88,60 +89,19 @@ defineProps({
 
     <footer class="relative bg-blue-800 pt-8 pb-6">
   <div class="container mx-auto px-4">
-    <div class="flex flex-wrap text-left lg:text-left">
-      <div class="w-full lg:w-6/12 px-4">
-        <h4 class="text-3xl fonat-semibold text-blueGray-700">Rodapé</h4>
-        <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-          Sim.
-        </h5>
-        <div class="mt-6 lg:mb-0 mb-6">
-          <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-twitter"></i></button><button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-facebook-square"></i></button><button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-dribbble"></i></button><button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-github"></i>
-          </button>
-        </div>
+    <div class="flex flex-wrap justify-center lg:justify-between text-left lg:text-left">
+      <!-- ... Conteúdo existente ... -->
       </div>
-      <div class="w-full lg:w-6/12 px-4">
-        <div class="flex flex-wrap items-top mb-6">
-          <div class="w-full lg:w-4/12 px-4 ml-auto">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Links</span>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">Sobre nós</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
-              </li>
-            </ul>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Sim,</span>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Licença</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contato</a>
-              </li>
-            </ul>
+          <hr class="my-6 border-blueGray-300">
+          <div class="flex flex-wrap items-center justify-center">
+            <div class="w-full md:w-4/12 px-4 text-center">
+              <div class="text-sm text-blueGray-500 font-semibold py-1">
+                <a href="https://github.com/MarcoAntonio351" class="text-blue-500 hover:text-blue-700">GitHub</a> | <a href="https://www.linkedin.com/in/marco-acosta-a446b7177/" class="text-blue-500 hover:text-blue-700">LinkedIn</a> | Copyright © <span id="get-current-year">Cronos 2022</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <hr class="my-6 border-blueGray-300">
-    <div class="flex flex-wrap items-center md:justify-between justify-center">
-      <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-        <div class="text-sm text-blueGray-500 font-semibold py-1">
-          Copyright © <span id="get-current-year">Cronos 2022</span>
-        </div>
-      </div>
-    </div>
-  </div>
 </footer>
+
 </template>
 

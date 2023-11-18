@@ -67,7 +67,7 @@ class LeadsController extends Controller
             return response()->json([
                 'status' => 'SUCESSO',
                 'titulo' => 'Remoção de produto',
-                'message' => 'Produto removido coaam sucesso!',
+                'message' => 'Produto removido com sucesso!',
             ], 200);
         } catch (\Throwable $th) {
             return response()->json([
