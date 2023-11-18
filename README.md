@@ -4,12 +4,12 @@ Um sistema de CRM (Customer Relationship Management) simples desenvolvido como p
 
 ## Capturas de Tela
 
-Algumas capturas de tela do Cronos - CRM Simples:
+Para visualizar as capturas de tela, clique nos links abaixo:
 
-![Captura 1](https://ibb.co/vxrTN2C)
-![Captura 2](https://ibb.co/dm6SKqx)
-![Captura 3](https://ibb.co/Rhy29HW)
-
+- [Captura 1](https://ibb.co/vxrTN2C)
+- [Captura 2](https://ibb.co/dm6SKqx)
+- [Captura 3](https://ibb.co/Rhy29HW)
+- 
 ## Instalação
 
 Certifique-se de ter o ambiente Laravel/Vue.js configurado.
