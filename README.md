@@ -6,7 +6,7 @@ Um sistema de CRM (Customer Relationship Management) simples desenvolvido como p
 
 Para visualizar as capturas de tela, clique nos links abaixo:
 
-- [Captura 1](https://ibb.co/vxrTN2C)
+- [Captura 1](<img src="https://i.ibb.co/MDjtzqy/Captura-de-tela-2023-11-18-125422.png" alt="Captura-de-tela-2023-11-18-125422" border="0" />)
 - [Captura 2](https://ibb.co/dm6SKqx)
 - [Captura 3](https://ibb.co/Rhy29HW)
 - 
