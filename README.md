@@ -2,6 +2,14 @@
 
 Um sistema de CRM (Customer Relationship Management) simples desenvolvido como parte do Trabalho de Conclusão de Curso (TCC). O Cronos utiliza Laravel no backend e Vue.js no frontend para oferecer funcionalidades básicas de gerenciamento de clientes, a ideia se baseou em construir um sistema de fácil usabilidade e garantir a segurança dos usuários
 
+## Capturas de Tela
+
+Algumas capturas de tela do Cronos - CRM Simples:
+
+![Captura 1](https://ibb.co/vxrTN2C)
+![Captura 2](https://ibb.co/dm6SKqx)
+![Captura 3](https://ibb.co/Rhy29HW)
+
 ## Instalação
 
 Certifique-se de ter o ambiente Laravel/Vue.js configurado.
