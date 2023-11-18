@@ -6,7 +6,7 @@ Um sistema de CRM (Customer Relationship Management) simples desenvolvido como p
 
 ## Tela Inicial
 
-![Tela Inicial](resources/images/tela%20inicial.png)
+<img src="resources/images/tela%20inicial.png" width="50%">
 
 ## Instalação
 
