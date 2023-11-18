@@ -4,12 +4,10 @@ Um sistema de CRM (Customer Relationship Management) simples desenvolvido como p
 
 ## Capturas de Tela
 
-Para visualizar as capturas de tela, clique nos links abaixo:
+## Tela Inicial
 
-- [Captura 1](resources/images/inicio.png)
-- [Captura 2](https://ibb.co/dm6SKqx)
-- [Captura 3](https://ibb.co/Rhy29HW)
-- 
+![Tela Inicial](resources/images/tela%20inicial.png)
+
 ## Instalação
 
 Certifique-se de ter o ambiente Laravel/Vue.js configurado.
